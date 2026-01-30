@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://rwrj2kpqpx2o"]
+
+[ext_resource type="Script" uid="uid://mmck8ltjqedx" path="res://game_manager.gd" id="1_mjoiu"]
+
+[node name="GameManager" type="Node3D" unique_id=1276094089]
+script = ExtResource("1_mjoiu")
+
+[node name="GameLoopTimer" type="Timer" parent="." unique_id=1146591328]
+wait_time = 10.0
+autostart = true
+
+[node name="DeathTimer" type="Timer" parent="." unique_id=1877924415]
+wait_time = 5.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1987066001]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=338906802]
+offset_right = 1153.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 1)
+
+[connection signal="timeout" from="GameLoopTimer" to="." method="_on_game_loop_timer_timeout"]
+[connection signal="timeout" from="DeathTimer" to="." method="_on_death_timer_timeout"]

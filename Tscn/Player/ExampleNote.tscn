@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bbpvq1twn63rk"]
+
+[ext_resource type="Script" uid="uid://52hqvnsqftxe" path="res://Tscn/Player/Note.gd" id="1_pvtvg"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_b8pw5"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_pvtvg"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[node name="Note" type="MeshInstance3D" unique_id=2076376056 groups=["Note"]]
+transform = Transform3D(-0.100000024, 0, 0, 0, 0.9, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_b8pw5")
+script = ExtResource("1_pvtvg")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1206390239 groups=["Note"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1794465934 groups=["Note"]]
+shape = SubResource("ConcavePolygonShape3D_pvtvg")

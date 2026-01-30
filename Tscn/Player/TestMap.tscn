@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://d0s2o2tx86s6l"]
+
+[ext_resource type="PackedScene" uid="uid://cw31esap3kng7" path="res://Tscn/Player/player.tscn" id="1_fvh4k"]
+[ext_resource type="PackedScene" uid="uid://bbpvq1twn63rk" path="res://Tscn/Player/ExampleNote.tscn" id="2_trbfg"]
+[ext_resource type="PackedScene" uid="uid://g3nyschknn4m" path="res://Tscn/talking_lady.tscn" id="3_34s8d"]
+[ext_resource type="AudioStream" uid="uid://qa55mng0bi4i" path="res://SFX/BlueMaskLady.mp3" id="4_xap0v"]
+[ext_resource type="AudioStream" uid="uid://ccjwl4owkctve" path="res://SFX/RedMaskLady.mp3" id="5_fwsup"]
+[ext_resource type="AudioStream" uid="uid://bu0gm2nynk5pc" path="res://SFX/YellowMaskLady.mp3" id="6_185ci"]
+[ext_resource type="PackedScene" uid="uid://rwrj2kpqpx2o" path="res://Tscn/game_manager.tscn" id="7_un6sn"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_trbfg"]
+
+[sub_resource type="Sky" id="Sky_trbfg"]
+
+[sub_resource type="Environment" id="Environment_trbfg"]
+background_mode = 2
+sky = SubResource("Sky_trbfg")
+ambient_light_source = 3
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 6.35
+
+[node name="Node3D" type="Node3D" unique_id=212793425]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=611980813]
+transform = Transform3D(4.6050663, 0, 0, 0, 0.029458225, 0, 0, 0, 4.288339, -1.0335693, -0.4044702, -1.1350826)
+mesh = SubResource("BoxMesh_trbfg")
+
+[node name="Player" parent="." unique_id=207691121 instance=ExtResource("1_fvh4k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.28720117, -0.6934986)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=460691306]
+environment = SubResource("Environment_trbfg")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="WorldEnvironment" unique_id=1034814661]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3908938, 2.2401667, -1.5407122)
+
+[node name="Note" parent="." unique_id=2076376056 instance=ExtResource("2_trbfg")]
+transform = Transform3D(-0.100000024, 0, 0, 0, 0.9, 0, 0, 0, 1, -2.54271, 0.28720117, -0.6934986)
+text = "Test Please"
+
+[node name="TalkingLady" parent="." unique_id=1701863093 instance=ExtResource("3_34s8d")]
+transform = Transform3D(0.14312217, 0, 0, 0, 2.4751036, 0, 0, 0, 1, -2.54271, 0.9113433, -2.4480078)
+voice = ExtResource("4_xap0v")
+
+[node name="TalkingLady2" parent="." unique_id=1466408383 instance=ExtResource("3_34s8d")]
+transform = Transform3D(0.14312217, 0, 0, 0, 2.4751036, 0, 0, 0, 1, 0.64854336, 0.9113433, -2.4480078)
+voice = ExtResource("5_fwsup")
+
+[node name="TalkingLady3" parent="." unique_id=1497565746 instance=ExtResource("3_34s8d")]
+transform = Transform3D(-6.2560686e-09, 0, -0.9999999, 0, 2.4751034, 0, 0.14312217, 0, -4.3711385e-08, -1.0754917, 0.9113433, -3.2373283)
+voice = ExtResource("6_185ci")
+
+[node name="GameManager" parent="." unique_id=1276094089 instance=ExtResource("7_un6sn")]
