@@ -14,7 +14,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.07397461, 0)
 shape = SubResource("CapsuleShape3D_mhy7c")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1563870268]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7427771, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3026636, 0)
 
 [node name="RayCast3D" type="RayCast3D" parent="Camera3D" unique_id=1655714921]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5017642)
