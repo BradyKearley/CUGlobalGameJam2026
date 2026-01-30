@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://ccjwl4owkctve" path="res://SFX/RedMaskLady.mp3" id="5_fwsup"]
 [ext_resource type="AudioStream" uid="uid://bu0gm2nynk5pc" path="res://SFX/YellowMaskLady.mp3" id="6_185ci"]
 [ext_resource type="PackedScene" uid="uid://rwrj2kpqpx2o" path="res://Tscn/game_manager.tscn" id="7_un6sn"]
+[ext_resource type="PackedScene" uid="uid://b0dvaq7xi83ms" path="res://Tscn/Clock.tscn" id="8_viy3q"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_trbfg"]
 
@@ -51,3 +52,6 @@ transform = Transform3D(-6.2560686e-09, 0, -0.9999999, 0, 2.4751034, 0, 0.143122
 voice = ExtResource("6_185ci")
 
 [node name="GameManager" parent="." unique_id=1276094089 instance=ExtResource("7_un6sn")]
+
+[node name="MultiMeshInstance3D" parent="." unique_id=2027109289 instance=ExtResource("8_viy3q")]
+transform = Transform3D(-0.99979645, 0, 0.020174716, 0, 1, 0, -0.020174716, 0, -0.99979645, 0, 0.3602643, 2.5015182)

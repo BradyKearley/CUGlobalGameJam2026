@@ -6,7 +6,7 @@
 script = ExtResource("1_mjoiu")
 
 [node name="GameLoopTimer" type="Timer" parent="." unique_id=1146591328]
-wait_time = 10.0
+wait_time = 120.0
 autostart = true
 
 [node name="DeathTimer" type="Timer" parent="." unique_id=1877924415]
