@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cw31esap3kng7"]
 
 [ext_resource type="Script" uid="uid://bnfun0xbrcibd" path="res://Player.gd" id="1_yhba0"]
+[ext_resource type="Texture2D" uid="uid://dr6x0mxnhyp7v" path="res://Materials/1545206.png" id="2_mhy7c"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mhy7c"]
 height = 2.1479492
@@ -23,3 +24,10 @@ collide_with_areas = true
 
 [node name="AudioListener3D" type="AudioListener3D" parent="." unique_id=1753434265]
 current = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=546984794]
+
+[node name="1545206" type="Sprite2D" parent="CanvasLayer" unique_id=1115258618]
+position = Vector2(576, 322)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("2_mhy7c")

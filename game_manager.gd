@@ -7,6 +7,13 @@ func _ready() -> void:
 	color_rect.modulate.a = 1.0 # Start fully opaque
 	var tween = create_tween()
 	tween.tween_property(color_rect, "modulate:a", 0.0, 5) # Fade to transparent over 1 second
+	# IMPORTANT: Disable mouse input on ColorRect so it doesn't block UI buttons
+	tween.tween_callback(_disable_color_rect_mouse_input)
+
+func _disable_color_rect_mouse_input():
+	"""Disable mouse input on ColorRect so it doesn't block note UI buttons"""
+	color_rect.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	print("GameManager: ColorRect mouse input disabled")
 
 func _on_game_loop_timer_timeout() -> void:
 	# Fade in ColorRect when game loop finishes

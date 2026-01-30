@@ -1,6 +1,13 @@
 [gd_scene format=3 uid="uid://bsf3un5oxei6a"]
 
 [ext_resource type="Script" uid="uid://btwmj0q4x4xh" path="res://Tscn/Player/note_ui.gd" id="1_x0mg4"]
+[ext_resource type="FontFile" uid="uid://dyn2h8swbrum5" path="res://Font/Tangerine-Regular.ttf" id="2_6ulkk"]
+[ext_resource type="Texture2D" uid="uid://bpv2iwyxblwse" path="res://Materials/Scrolled_Ancient_Paper_PNG_Clipart_Image.png" id="2_rn0np"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_oflol"]
+font = ExtResource("2_6ulkk")
+font_size = 60
+font_color = Color(0, 0, 0, 1)
 
 [node name="NoteUI" type="Control" unique_id=524111183]
 layout_mode = 3
@@ -20,16 +27,25 @@ offset_bottom = 515.0
 
 [node name="Label" type="Label" parent="Panel" unique_id=1271043798]
 layout_mode = 0
-offset_right = 392.0
+offset_right = 381.0
 offset_bottom = 358.0
 text = "This is the text that goes in the note"
+label_settings = SubResource("LabelSettings_oflol")
 horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="ScrolledAncientPaperPngClipartImage" type="Sprite2D" parent="Panel/Label" unique_id=1441877713]
+show_behind_parent = true
+position = Vector2(193, 160.99998)
+scale = Vector2(0.12, 0.116)
+texture = ExtResource("2_rn0np")
 
 [node name="Button" type="Button" parent="." unique_id=603013974]
 layout_mode = 0
-offset_left = 813.0
-offset_top = 115.0
-offset_right = 863.0
-offset_bottom = 158.0
+offset_left = 766.0
+offset_top = 60.0
+offset_right = 816.0
+offset_bottom = 103.0
+text = "X"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
