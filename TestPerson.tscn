@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://br6qebqohpdft"]
+
+[ext_resource type="Script" uid="uid://1yn4jv4psye8" path="res://Scripts/walking_npc.gd" id="1_2h3x5"]
+[ext_resource type="Material" uid="uid://yjeanh1o4gtq" path="res://Materials/ClockHand.tres" id="2_6jth8"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_w3s8l"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3k2m1"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_nqmym"]
+
+[node name="CharacterBody3D" type="CharacterBody3D" unique_id=1946460665]
+script = ExtResource("1_2h3x5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1026016166]
+mesh = SubResource("CapsuleMesh_w3s8l")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1430283700]
+shape = SubResource("CapsuleShape3D_3k2m1")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1089427776]
+transform = Transform3D(0.011463411, 0, -0.99903446, 0, 0.20151645, 0, 0.26067585, 0, 0.04393327, -0.05273974, 0.51991224, 0.40550578)
+material_override = ExtResource("2_6jth8")
+mesh = SubResource("BoxMesh_nqmym")

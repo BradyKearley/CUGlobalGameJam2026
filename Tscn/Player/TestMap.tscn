@@ -8,8 +8,12 @@
 [ext_resource type="AudioStream" uid="uid://bu0gm2nynk5pc" path="res://SFX/YellowMaskLady.mp3" id="6_185ci"]
 [ext_resource type="PackedScene" uid="uid://rwrj2kpqpx2o" path="res://Tscn/game_manager.tscn" id="7_un6sn"]
 [ext_resource type="PackedScene" uid="uid://b0dvaq7xi83ms" path="res://Tscn/Clock.tscn" id="8_viy3q"]
+[ext_resource type="PackedScene" uid="uid://br6qebqohpdft" path="res://TestPerson.tscn" id="9_abc123"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_trbfg"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_3n6f3"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
 
 [sub_resource type="Sky" id="Sky_trbfg"]
 
@@ -20,11 +24,24 @@ ambient_light_source = 3
 ambient_light_color = Color(1, 1, 1, 1)
 ambient_light_energy = 6.35
 
+[sub_resource type="Curve3D" id="Curve3D_3n6f3"]
+closed = true
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 10, 1, 0, 0, 0, 0, 0, 0, 0, 10, 1, 5),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
 [node name="Node3D" type="Node3D" unique_id=212793425]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=611980813]
-transform = Transform3D(4.6050663, 0, 0, 0, 0.029458225, 0, 0, 0, 4.288339, -1.0335693, -0.4044702, -1.1350826)
+transform = Transform3D(30.840002, 0, 0, 0, 0.029458225, 0, 0, 0, 23.93008, -1.0335693, -0.4044702, -1.1350826)
 mesh = SubResource("BoxMesh_trbfg")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=1141809676]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=188725867]
+shape = SubResource("ConcavePolygonShape3D_3n6f3")
 
 [node name="Player" parent="." unique_id=207691121 instance=ExtResource("1_fvh4k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.28720117, -0.6934986)
@@ -34,6 +51,9 @@ environment = SubResource("Environment_trbfg")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="WorldEnvironment" unique_id=1034814661]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3908938, 2.2401667, -1.5407122)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment/OmniLight3D" unique_id=1309303656]
+transform = Transform3D(-0.19690137, 0.32093087, -0.9264088, -0.054228634, 0.9398954, 0.33712888, 0.9789224, 0.11661901, -0.16766304, -13.566932, 2.089466, -4.9572153)
 
 [node name="Note" parent="." unique_id=2076376056 instance=ExtResource("2_trbfg")]
 transform = Transform3D(-0.100000024, 0, 0, 0, 0.9, 0, 0, 0, 1, -2.54271, 0.28720117, -0.6934986)
@@ -55,3 +75,25 @@ voice = ExtResource("6_185ci")
 
 [node name="MultiMeshInstance3D" parent="." unique_id=2027109289 instance=ExtResource("8_viy3q")]
 transform = Transform3D(-0.99979645, 0, 0.020174716, 0, 1, 0, -0.020174716, 0, -0.99979645, 0, 0.3602643, 2.5015182)
+
+[node name="WalkingNPC1" parent="." unique_id=1309840651 node_paths=PackedStringArray("path_to_follow") instance=ExtResource("9_abc123")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0.5, -5)
+speed = 0.1
+path_progress_speed = 0.1
+path_to_follow = NodePath("../Path3D")
+
+[node name="WalkingNPC2" parent="." unique_id=1920636493 node_paths=PackedStringArray("path_to_follow") instance=ExtResource("9_abc123")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.5, -5)
+speed = 0.1
+path_progress_speed = 0.1
+path_to_follow = NodePath("../Path3D")
+
+[node name="WalkingNPC3" parent="." unique_id=1778030323 node_paths=PackedStringArray("path_to_follow") instance=ExtResource("9_abc123")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0.5, 3)
+speed = 0.2
+path_progress_speed = 0.2
+path_to_follow = NodePath("../Path3D")
+
+[node name="Path3D" type="Path3D" parent="." unique_id=1745892307]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.38974106, 0)
+curve = SubResource("Curve3D_3n6f3")
