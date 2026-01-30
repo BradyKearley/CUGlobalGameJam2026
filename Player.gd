@@ -52,7 +52,7 @@ func _process(delta: float) -> void:
 	var space_state = get_world_3d().direct_space_state
 	var camera_transform = camera.global_transform
 	var from = camera_transform.origin
-	var to = from + camera_transform.basis.z * -100  # Cast 100 units forward
+	var to = from + camera_transform.basis.z * -100 # Cast 100 units forward
 	
 	var query = PhysicsRayQueryParameters3D.create(from, to)
 	var result = space_state.intersect_ray(query)
