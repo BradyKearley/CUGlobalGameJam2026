@@ -88,6 +88,7 @@ drinkName = "Champagne"
 
 [node name="MultiMeshInstance3D" parent="." unique_id=2027109289 instance=ExtResource("8_viy3q")]
 transform = Transform3D(-0.99979645, 0, 0.020174716, 0, 1, 0, -0.020174716, 0, -0.99979645, 0, 0.3602643, 2.5015182)
+clockRingTime = 5
 
 [node name="WalkingNPC1" parent="." unique_id=1309840651 node_paths=PackedStringArray("path_to_follow") instance=ExtResource("9_abc123")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0.5, -5)
