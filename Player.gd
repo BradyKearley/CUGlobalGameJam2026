@@ -92,9 +92,9 @@ func _process(delta: float) -> void:
 				elif collider.is_in_group("Voice"):
 					if heldDrink == "Wine" and collider.get_parent().drinkName == "Wine":
 						collider.get_parent().playVoice()
-					elif heldDrink == "Martini" and collider.get_parent().drinkName =="Martini":
+					elif heldDrink == "Martini" and collider.get_parent().drinkName == "Martini":
 						collider.get_parent().playVoice()
-					elif heldDrink == "Champagne" and collider.get_parent().drinkName =="Champagne":
+					elif heldDrink == "Champagne" and collider.get_parent().drinkName == "Champagne":
 						collider.get_parent().playVoice()
 					else:
 						print("Drink")
