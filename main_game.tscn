@@ -278,4 +278,4 @@ transform = Transform3D(0.2391373, 0, -0.5927302, 0, 0.039, 0, 0.33672294, 0, 0.
 text = "Mark well the moments when time itself speaks. The clock’s voice is not mere ceremony; to those who listen closely, the minute it strikes falls with purpose."
 
 [node name="Book" parent="." unique_id=1170688364 instance=ExtResource("16_borgi")]
-transform = Transform3D(0.27439025, -0.021547271, 0, 0.099869885, 0.059200637, 0, 0, 0, 0.559, 35.084564, 0.5112146, -44.74031)
+transform = Transform3D(0.27439025, -0.021547271, 0, 0.099869885, 0.059200637, 0, 0, 0, 0.559, 35.084564, 0.5112146, -44.920437)
