@@ -1,4 +1,4 @@
-extends MultiMeshInstance3D
+extends MeshInstance3D
 @export var clockRingTime: int
 
 func _ready() -> void:

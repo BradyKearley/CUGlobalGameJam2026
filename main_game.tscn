@@ -11,7 +11,10 @@
 [ext_resource type="PackedScene" uid="uid://bbpvq1twn63rk" path="res://Tscn/Player/ExampleNote.tscn" id="9_4srsv"]
 [ext_resource type="PackedScene" uid="uid://5a2ta0u6lepi" path="res://chests.tscn" id="10_mf81u"]
 [ext_resource type="PackedScene" uid="uid://bnwve2nhljql4" path="res://code_lock.tscn" id="11_02kkc"]
-[ext_resource type="PackedScene" uid="uid://b0dvaq7xi83ms" path="res://Tscn/Clock.tscn" id="12_aomqu"]
+[ext_resource type="PackedScene" uid="uid://dibg86k4kmtx6" path="res://Tscn/Clocks/clock_2.tscn" id="13_jgkyn"]
+[ext_resource type="PackedScene" uid="uid://cva7fvmlxkwln" path="res://Tscn/Clocks/clock_1.tscn" id="13_krmtw"]
+[ext_resource type="PackedScene" uid="uid://kg43t7p8h663" path="res://Tscn/Clocks/clock_3.tscn" id="14_qpaub"]
+[ext_resource type="PackedScene" uid="uid://rwrj2kpqpx2o" path="res://Tscn/game_manager.tscn" id="15_qpaub"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_px6mo"]
 resource_name = "Material"
@@ -266,6 +269,13 @@ transform = Transform3D(0.017755127, 2.2945064e-09, 3.1998181, -2.51408e-07, 1.4
 code = "AAA"
 chest = NodePath("../Chests")
 
-[node name="MultiMeshInstance3D" parent="." unique_id=2027109289 instance=ExtResource("12_aomqu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.178298, 3.267969, -7.5193114)
-clockRingTime = 80
+[node name="Clock1" parent="." unique_id=1823690887 instance=ExtResource("13_krmtw")]
+transform = Transform3D(-4.371139e-08, 0.12828708, -4.371139e-08, 0, -5.6076064e-09, -1, -1, -5.6076064e-09, 1.9106855e-15, -25.519032, 4.8297725, -40.631165)
+
+[node name="Clock2" parent="." unique_id=1422515745 instance=ExtResource("13_jgkyn")]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 0.12828708, 0, 7.7624407, 6.4968624, -32.868908)
+
+[node name="Clock3" parent="." unique_id=865516084 instance=ExtResource("14_qpaub")]
+transform = Transform3D(-4.371139e-08, -0.12828708, 4.371139e-08, 0, -5.6076064e-09, -1, 1, -5.6076064e-09, 1.9106855e-15, 51.0436, 5.704872, -28.706253)
+
+[node name="GameManager" parent="." unique_id=1276094089 instance=ExtResource("15_qpaub")]

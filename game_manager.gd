@@ -23,4 +23,4 @@ func _on_game_loop_timer_timeout() -> void:
 	
 
 func _on_death_timer_timeout() -> void:
-	get_tree().change_scene_to_file("res://Tscn/Player/TestMap.tscn")
+	get_tree().change_scene_to_file("res://main_game.tscn")
