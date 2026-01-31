@@ -9,10 +9,13 @@ extends CharacterBody3D
 const noteUi: PackedScene = preload("res://Tscn/Ui/note_ui.tscn")
 const combinationLockUi: PackedScene = preload("res://combination_lock.tscn")
 const interactUi: PackedScene = preload("res://Tscn/Ui/interact_popup.tscn")
+const bartenderUi: PackedScene = preload("res://Tscn/Ui/bartender_ui.tscn")
 var noteUiPresent = false
 var lockUiPresent = false
+var bartenderUiPresent = false
 var interactPopupPresent = false
 var currentInteractPopup = null
+var heldDrink = "None"
 func _ready():
 	# Capture the mouse cursor
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -31,7 +34,7 @@ func _input(event):
 func _physics_process(delta):
 	# Handle WASD movement
 	var input_dir = Vector3.ZERO
-	if not noteUiPresent and not lockUiPresent:
+	if not noteUiPresent and not lockUiPresent and not bartenderUiPresent:
 		if Input.is_action_pressed("D"): # D key
 			input_dir.x += 1
 		if Input.is_action_pressed("A"): # A key
@@ -67,11 +70,11 @@ func _process(delta: float) -> void:
 	
 	if result:
 		var collider = result.collider
-		if collider.is_in_group("Note") or collider.is_in_group("Voice") or collider.is_in_group("CodeLock"):
+		if collider.is_in_group("Note") or collider.is_in_group("Voice") or collider.is_in_group("CodeLock") or collider.is_in_group("Bartender"):
 			lookingAtInteractable = true
 			
 			# Show interact popup if not already shown and no other UI is open
-			if not interactPopupPresent and not noteUiPresent and not lockUiPresent:
+			if not interactPopupPresent and not noteUiPresent and not lockUiPresent and not bartenderUiPresent:
 				showInteractPopup()
 			
 			# Handle interactions
@@ -87,7 +90,15 @@ func _process(delta: float) -> void:
 					noteUiPresent = true
 					Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 				elif collider.is_in_group("Voice"):
-					collider.get_parent().playVoice()
+					if heldDrink == "Wine" and collider.get_parent().drinkName == "Wine":
+						collider.get_parent().playVoice()
+					elif heldDrink == "Martini" and collider.get_parent().drinkName =="Martini":
+						collider.get_parent().playVoice()
+					elif heldDrink == "Champagne" and collider.get_parent().drinkName =="Champagne":
+						collider.get_parent().playVoice()
+					else:
+						print("Drink")
+						collider.get_parent().playDrink()
 				elif collider.is_in_group("CodeLock") and not lockUiPresent:
 					hideInteractPopup()
 					var lock_ui_instance = combinationLockUi.instantiate()
@@ -98,7 +109,20 @@ func _process(delta: float) -> void:
 					lock_ui_instance.lock_opened.connect(onLockOpened)
 					lockUiPresent = true
 					Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	
+				elif collider.is_in_group("Bartender") and not bartenderUiPresent:
+					if heldDrink == "None":
+						hideInteractPopup()
+						var bartender_ui_instance = bartenderUi.instantiate()
+						add_child(bartender_ui_instance)
+						# Connect the signals to handle bartender UI events
+						bartender_ui_instance.ui_closed.connect(resetMouseFromBartender)
+						bartender_ui_instance.drink_selected.connect(setDrink)
+						bartenderUiPresent = true
+						Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+					else:
+						collider.get_parent().swapVoice()
+					collider.get_parent().playVoice()
+						
 	# Hide interact popup if not looking at anything interactable
 	if not lookingAtInteractable and interactPopupPresent:
 		hideInteractPopup()
@@ -126,3 +150,11 @@ func onLockOpened():
 	lockUiPresent = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	# Add your unlock logic here - what happens when the lock opens?
+
+func resetMouseFromBartender():
+	bartenderUiPresent = false
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
+func setDrink(drink_name: String):
+	heldDrink = drink_name
+	print("Player selected drink: ", heldDrink)

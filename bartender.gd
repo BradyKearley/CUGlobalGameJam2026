@@ -1,12 +1,10 @@
 extends MeshInstance3D
 
 @export var voice:AudioStreamMP3
-@export var drink:AudioStreamMP3
-@export var drinkName: String
+@export var voiceTwo:AudioStreamMP3
 func _ready() -> void:
 	$Voice.stream = voice
-	$Drink.stream = drink
 func playVoice():
 	$Voice.play()
-func playDrink():
-	$Drink.play()
+func swapVoice():
+	$Voice.stream = voiceTwo

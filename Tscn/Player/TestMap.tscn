@@ -5,11 +5,17 @@
 [ext_resource type="PackedScene" uid="uid://g3nyschknn4m" path="res://Tscn/talking_lady.tscn" id="3_34s8d"]
 [ext_resource type="AudioStream" uid="uid://qa55mng0bi4i" path="res://SFX/BlueMaskLady.mp3" id="4_xap0v"]
 [ext_resource type="AudioStream" uid="uid://ccjwl4owkctve" path="res://SFX/RedMaskLady.mp3" id="5_fwsup"]
+[ext_resource type="AudioStream" uid="uid://b00gipogbipll" path="res://SFX/WineLady.mp3" id="5_ysj3m"]
 [ext_resource type="AudioStream" uid="uid://bu0gm2nynk5pc" path="res://SFX/YellowMaskLady.mp3" id="6_185ci"]
+[ext_resource type="AudioStream" uid="uid://bijx0asa43t6b" path="res://SFX/MartiniLady.mp3" id="7_n8hfn"]
 [ext_resource type="PackedScene" uid="uid://rwrj2kpqpx2o" path="res://Tscn/game_manager.tscn" id="7_un6sn"]
 [ext_resource type="PackedScene" uid="uid://b0dvaq7xi83ms" path="res://Tscn/Clock.tscn" id="8_viy3q"]
 [ext_resource type="PackedScene" uid="uid://br6qebqohpdft" path="res://TestPerson.tscn" id="9_abc123"]
+[ext_resource type="AudioStream" uid="uid://18o8jdj8ht08" path="res://SFX/ChampagneLady.mp3" id="9_qmmru"]
 [ext_resource type="PackedScene" uid="uid://bnwve2nhljql4" path="res://code_lock.tscn" id="10_w7tib"]
+[ext_resource type="PackedScene" uid="uid://bp8gk8av1del5" path="res://Tscn/bartender.tscn" id="11_a6cr7"]
+[ext_resource type="AudioStream" uid="uid://iwi3w5doktfo" path="res://SFX/Bartender.mp3" id="12_uxa5p"]
+[ext_resource type="AudioStream" uid="uid://8y3ip381b4ms" path="res://SFX/DrinkAlreadyTaken.mp3" id="16_b5442"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_trbfg"]
 
@@ -63,14 +69,20 @@ text = "Test Please"
 [node name="TalkingLady" parent="." unique_id=1701863093 instance=ExtResource("3_34s8d")]
 transform = Transform3D(0.14312217, 0, 0, 0, 2.4751036, 0, 0, 0, 1, -2.54271, 0.9113433, -2.4480078)
 voice = ExtResource("4_xap0v")
+drink = ExtResource("5_ysj3m")
+drinkName = "Wine"
 
 [node name="TalkingLady2" parent="." unique_id=1466408383 instance=ExtResource("3_34s8d")]
 transform = Transform3D(0.14312217, 0, 0, 0, 2.4751036, 0, 0, 0, 1, 0.64854336, 0.9113433, -2.4480078)
 voice = ExtResource("5_fwsup")
+drink = ExtResource("7_n8hfn")
+drinkName = "Martini"
 
 [node name="TalkingLady3" parent="." unique_id=1497565746 instance=ExtResource("3_34s8d")]
 transform = Transform3D(-6.2560686e-09, 0, -0.9999999, 0, 2.4751034, 0, 0.14312217, 0, -4.3711385e-08, -1.0754917, 0.9113433, -3.2373283)
 voice = ExtResource("6_185ci")
+drink = ExtResource("9_qmmru")
+drinkName = "Champagne"
 
 [node name="GameManager" parent="." unique_id=1276094089 instance=ExtResource("7_un6sn")]
 
@@ -102,3 +114,7 @@ curve = SubResource("Curve3D_3n6f3")
 [node name="CodeLock" parent="." unique_id=770823836 instance=ExtResource("10_w7tib")]
 transform = Transform3D(-0.100000024, 0, 0, 0, 0.9, 0, 0, 0, 1, 2.3249683, 0, 0)
 code = "aaa"
+
+[node name="Bartender" parent="." unique_id=776883655 instance=ExtResource("11_a6cr7")]
+voice = ExtResource("12_uxa5p")
+voiceTwo = ExtResource("16_b5442")
