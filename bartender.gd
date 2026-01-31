@@ -4,6 +4,7 @@ extends MeshInstance3D
 @export var voiceTwo:AudioStreamMP3
 func _ready() -> void:
 	$Voice.stream = voice
+	$Man.playIdle()
 func playVoice():
 	$Voice.play()
 func swapVoice():

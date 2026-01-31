@@ -6,6 +6,7 @@ extends MeshInstance3D
 func _ready() -> void:
 	$Voice.stream = voice
 	$Drink.stream = drink
+	$Woman2.playIdle()
 func playVoice():
 	$Voice.play()
 func playDrink():

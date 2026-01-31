@@ -1,24 +1,26 @@
 [gd_scene format=3 uid="uid://g3nyschknn4m"]
 
 [ext_resource type="Script" uid="uid://vllu4n7fvvwv" path="res://Tscn/talking_lady.gd" id="1_qa860"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_b8pw5"]
+[ext_resource type="PackedScene" uid="uid://1jc65xse0kvp" path="res://npc_woman.tscn" id="2_lf87v"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_pvtvg"]
 data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
 
 [node name="TalkingLady" type="MeshInstance3D" unique_id=2076376056 groups=["Voice"]]
-transform = Transform3D(-1.4312214, 0, 0, 0, 2.7501152, 0, 0, 0, 1, 0, 0, 0)
-mesh = SubResource("BoxMesh_b8pw5")
+transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0)
 script = ExtResource("1_qa860")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1206390239 groups=["Voice"]]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1794465934 groups=["Voice"]]
+transform = Transform3D(0.585, 0, 0, 0, 1.045, 0, 0, 0, 0.44, 0.005906433, -0.6930707, 6.059017e-08)
 shape = SubResource("ConcavePolygonShape3D_pvtvg")
 
 [node name="Voice" type="AudioStreamPlayer3D" parent="." unique_id=1776330703 groups=["Voice"]]
 max_distance = 30.0
 
-[node name="Drink" type="AudioStreamPlayer3D" parent="." unique_id=1313398115]
+[node name="Drink" type="AudioStreamPlayer3D" parent="." unique_id=1313398115 groups=["Voice"]]
 max_distance = 20.0
+
+[node name="Woman2" parent="." unique_id=468122675 groups=["Voice"] instance=ExtResource("2_lf87v")]
+transform = Transform3D(-0.3, 2.2928227e-15, -2.6226834e-08, 0, -0.3, -2.6226834e-08, -2.6226834e-08, -2.6226834e-08, 0.3, 0, 0, 0)

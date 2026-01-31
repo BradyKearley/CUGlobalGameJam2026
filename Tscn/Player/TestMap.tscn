@@ -9,7 +9,6 @@
 [ext_resource type="AudioStream" uid="uid://bu0gm2nynk5pc" path="res://SFX/YellowMaskLady.mp3" id="6_185ci"]
 [ext_resource type="AudioStream" uid="uid://bijx0asa43t6b" path="res://SFX/MartiniLady.mp3" id="7_n8hfn"]
 [ext_resource type="PackedScene" uid="uid://rwrj2kpqpx2o" path="res://Tscn/game_manager.tscn" id="7_un6sn"]
-[ext_resource type="PackedScene" uid="uid://b0dvaq7xi83ms" path="res://Tscn/Clock.tscn" id="8_viy3q"]
 [ext_resource type="PackedScene" uid="uid://br6qebqohpdft" path="res://TestPerson.tscn" id="9_abc123"]
 [ext_resource type="AudioStream" uid="uid://18o8jdj8ht08" path="res://SFX/ChampagneLady.mp3" id="9_qmmru"]
 [ext_resource type="PackedScene" uid="uid://bnwve2nhljql4" path="res://code_lock.tscn" id="10_w7tib"]
@@ -85,10 +84,6 @@ drink = ExtResource("9_qmmru")
 drinkName = "Champagne"
 
 [node name="GameManager" parent="." unique_id=1276094089 instance=ExtResource("7_un6sn")]
-
-[node name="MultiMeshInstance3D" parent="." unique_id=2027109289 instance=ExtResource("8_viy3q")]
-transform = Transform3D(-0.99979645, 0, 0.020174716, 0, 1, 0, -0.020174716, 0, -0.99979645, 0, 0.3602643, 2.5015182)
-clockRingTime = 5
 
 [node name="WalkingNPC1" parent="." unique_id=1309840651 node_paths=PackedStringArray("path_to_follow") instance=ExtResource("9_abc123")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0.5, -5)

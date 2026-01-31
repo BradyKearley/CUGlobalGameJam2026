@@ -1,10 +1,12 @@
-[gd_scene format=3 uid="uid://cj0nlavkdqfso"]
+[gd_scene format=3 uid="uid://bsolx4n0u2e6j"]
 
 [ext_resource type="PackedScene" uid="uid://cecpoe4rax20r" path="res://Models/NPCs/Man.glb" id="1_ogmom"]
+[ext_resource type="Script" uid="uid://c43yaf6t5uekg" path="res://npc_man.gd" id="2_jd6e5"]
 
 [node name="Man" unique_id=408276667 instance=ExtResource("1_ogmom")]
+script = ExtResource("2_jd6e5")
 
-[node name="Skeleton3D" parent="Suit_Man_001" parent_id_path=PackedInt32Array(93862826) index="0" unique_id=2020207543]
+[node name="Skeleton3D" parent="Suit_Man_001" parent_id_path=PackedInt32Array(652033921) index="0" unique_id=1882505691]
 bones/2/position = Vector3(0.5418849, 0.9014468, 6.950728e-08)
 bones/2/rotation = Quaternion(4.995449e-07, -6.58824e-08, 0.99998915, -0.0046576615)
 bones/3/rotation = Quaternion(6.386505e-08, 6.6423944e-08, -0.004657662, 0.99998915)

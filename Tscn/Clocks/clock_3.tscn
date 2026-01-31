@@ -271,7 +271,7 @@ mesh = SubResource("ArrayMesh_vqi65")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.027844831, 1.6999998, 0)
 script = ExtResource("1_01ciq")
 loopRatio = 12.0
-starting_rotation = -25.0
+starting_rotation = -30.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="HourHand" unique_id=1873050756]
 transform = Transform3D(-0.01, 8.757756e-09, -5.2395546e-08, 1.5099579e-09, 0.058, -4.2970826e-22, -1.5099579e-09, 1.3223846e-15, 0.347, -0.0101676285, 0.15788782, -0.20943117)

@@ -19,7 +19,7 @@ var is_moving: bool = false
 var current_progress: float = 0.0
 
 func _ready():
-	
+	$Man.playWalking()
 	path_3d = path_to_follow
 	
 	path_follow_3d = PathFollow3D.new()
