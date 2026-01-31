@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://6ec0dsbmmtfy" path="res://Models/Puzzle_Paintings/Puzzle_Paintings_Painting3.png" id="4_02kkc"]
 [ext_resource type="Texture2D" uid="uid://dvnqkovm8toyj" path="res://Models/Puzzle_Paintings/Puzzle_Paintings_Painting4.png" id="5_aomqu"]
 [ext_resource type="Texture2D" uid="uid://53o5g21mgxbi" path="res://Models/Puzzle_Paintings/Puzzle_Paintings_painting5.png" id="6_krmtw"]
+[ext_resource type="PackedScene" uid="uid://bbpvq1twn63rk" path="res://Tscn/Player/ExampleNote.tscn" id="9_4srsv"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_px6mo"]
 resource_name = "Material"
@@ -241,3 +242,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.7895775, 1.1707963, -4.5691
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1680402485]
 environment = SubResource("Environment_l5ukw")
+
+[node name="Note" parent="." unique_id=2076376056 instance=ExtResource("9_4srsv")]
+transform = Transform3D(0.0021412885, 0.11193579, 0.99200433, -0.09975745, -0.05677054, 0.02944161, -0.0066235787, 0.89120567, -0.122720726, -21.084538, 1.9463089, -14.039125)
+text = "Pray, give due regard to the adornments upon the walls, for they were not set there by idle hand. Those who observe with patience may find their arrangement… instructive."
+
+[node name="Note2" parent="." unique_id=57040904 instance=ExtResource("9_4srsv")]
+transform = Transform3D(-1.910686e-16, -3.934025e-08, 1, -0.100000024, 3.934025e-08, 0, 4.37114e-09, 0.90000004, 4.371139e-08, 34.74784, 0.1534357, -44.319725)
+text = "Mark well the moments when time itself speaks. The clock’s voice is not mere ceremony; to those who listen closely, its strikes fall with purpose."

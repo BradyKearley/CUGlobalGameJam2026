@@ -6,7 +6,7 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_oflol"]
 font = ExtResource("2_6ulkk")
-font_size = 60
+font_size = 40
 font_color = Color(0, 0, 0, 1)
 
 [node name="NoteUI" type="Control" unique_id=524111183]
@@ -27,6 +27,7 @@ offset_bottom = 515.0
 
 [node name="Label" type="Label" parent="Panel" unique_id=1271043798]
 layout_mode = 0
+offset_top = -58.0
 offset_right = 381.0
 offset_bottom = 358.0
 text = "This is the text that goes in the note"
@@ -36,16 +37,16 @@ autowrap_mode = 2
 
 [node name="ScrolledAncientPaperPngClipartImage" type="Sprite2D" parent="Panel/Label" unique_id=1441877713]
 show_behind_parent = true
-position = Vector2(193, 160.99998)
+position = Vector2(195, 214)
 scale = Vector2(0.12, 0.116)
 texture = ExtResource("2_rn0np")
 
 [node name="Button" type="Button" parent="." unique_id=603013974]
 layout_mode = 0
-offset_left = 766.0
-offset_top = 60.0
-offset_right = 816.0
-offset_bottom = 103.0
+offset_left = 769.0
+offset_top = 53.0
+offset_right = 819.0
+offset_bottom = 96.0
 text = "X"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

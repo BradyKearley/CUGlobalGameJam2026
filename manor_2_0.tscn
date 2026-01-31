@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://w5gpp1crt1ya"]
 
 [ext_resource type="PackedScene" uid="uid://cex26k63f341j" path="res://Models/Manor2.0/Manor2.0.glb" id="1_8480v"]
-[ext_resource type="PackedScene" uid="uid://cw31esap3kng7" path="res://Tscn/Player/player.tscn" id="2_drulf"]
 
 [node name="Manor2_0" unique_id=1119379920 instance=ExtResource("1_8480v")]
 
@@ -152,31 +151,28 @@ shadow_enabled = true
 shadow_caster_mask = 4294967293
 omni_range = 20.0
 
-[node name="Player" parent="." index="99" unique_id=207691121 instance=ExtResource("2_drulf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.2874074, 1.5039704, -5.995969)
-
-[node name="SpotLight3D" type="SpotLight3D" parent="." index="100" unique_id=442807445]
+[node name="SpotLight3D" type="SpotLight3D" parent="." index="99" unique_id=442807445]
 transform = Transform3D(1, 0, 0, 0, -0.081590615, 0.99666595, 0, -0.99666595, -0.081590615, 36.65283, 8.915504, -13.672579)
 light_color = Color(1, 1, 0.78431374, 1)
 light_energy = 30.0
 spot_range = 3.965
 spot_angle = 22.68
 
-[node name="SpotLight3D2" type="SpotLight3D" parent="." index="101" unique_id=937645397]
+[node name="SpotLight3D2" type="SpotLight3D" parent="." index="100" unique_id=937645397]
 transform = Transform3D(1, 0, 0, 0, -0.081590615, 0.99666595, 0, -0.99666595, -0.081590615, 30.436022, 8.89015, -52.516216)
 light_color = Color(1, 1, 0.78431374, 1)
 light_energy = 30.0
 spot_range = 3.965
 spot_angle = 22.68
 
-[node name="SpotLight3D4" type="SpotLight3D" parent="." index="102" unique_id=846103679]
+[node name="SpotLight3D4" type="SpotLight3D" parent="." index="101" unique_id=846103679]
 transform = Transform3D(1, 0, 0, 0, -0.081590615, 0.99666595, 0, -0.99666595, -0.081590615, -29.447653, 8.89015, -21.608068)
 light_color = Color(1, 1, 0.78431374, 1)
 light_energy = 30.0
 spot_range = 3.965
 spot_angle = 22.68
 
-[node name="SpotLight3D3" type="SpotLight3D" parent="." index="103" unique_id=824009086]
+[node name="SpotLight3D3" type="SpotLight3D" parent="." index="102" unique_id=824009086]
 transform = Transform3D(1, 0, 0, 0, -0.081590615, 0.99666595, 0, -0.99666595, -0.081590615, -10.241882, 8.7991905, -46.522247)
 light_color = Color(1, 1, 0.78431374, 1)
 light_energy = 30.0
