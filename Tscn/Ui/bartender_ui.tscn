@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://o1675ibkdqds"]
+
+[ext_resource type="Script" uid="uid://d3rn17isiv087" path="res://Tscn/Ui/bartender_ui.gd" id="1_bartender_script"]
+
+[node name="BartenderUI" type="Control" unique_id=1743599524]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bartender_script")
+
+[node name="Panel" type="Panel" parent="." unique_id=2]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 200.0
+offset_right = 800.0
+offset_bottom = 500.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=3]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 60.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer" unique_id=4]
+layout_mode = 2
+text = "Choose Your Drink"
+horizontal_alignment = 1
+
+[node name="WineButton" type="Button" parent="Panel/VBoxContainer" unique_id=5]
+layout_mode = 2
+text = "Wine"
+
+[node name="MartiniButton" type="Button" parent="Panel/VBoxContainer" unique_id=6]
+layout_mode = 2
+text = "Martini"
+
+[node name="ChampagneButton" type="Button" parent="Panel/VBoxContainer" unique_id=7]
+layout_mode = 2
+text = "Champagne"
+
+[node name="CloseButton" type="Button" parent="." unique_id=8]
+layout_mode = 0
+offset_left = 760.0
+offset_top = 160.0
+offset_right = 810.0
+offset_bottom = 200.0
+text = "X"

@@ -1,24 +1,21 @@
-[gd_scene format=3 uid="uid://g3nyschknn4m"]
+[gd_scene format=3 uid="uid://bp8gk8av1del5"]
 
-[ext_resource type="Script" uid="uid://vllu4n7fvvwv" path="res://Tscn/talking_lady.gd" id="1_qa860"]
+[ext_resource type="Script" uid="uid://cikcfh8vxmsuu" path="res://bartender.gd" id="1_uf0n5"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_b8pw5"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_pvtvg"]
 data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
 
-[node name="TalkingLady" type="MeshInstance3D" unique_id=2076376056 groups=["Voice"]]
+[node name="Bartender" type="MeshInstance3D" unique_id=2076376056 groups=["Bartender"]]
 transform = Transform3D(-1.4312214, 0, 0, 0, 2.7501152, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("BoxMesh_b8pw5")
-script = ExtResource("1_qa860")
+script = ExtResource("1_uf0n5")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1206390239 groups=["Voice"]]
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1206390239 groups=["Bartender"]]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1794465934 groups=["Voice"]]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1794465934 groups=["Bartender"]]
 shape = SubResource("ConcavePolygonShape3D_pvtvg")
 
-[node name="Voice" type="AudioStreamPlayer3D" parent="." unique_id=1776330703 groups=["Voice"]]
+[node name="Voice" type="AudioStreamPlayer3D" parent="." unique_id=1776330703 groups=["Bartender"]]
 max_distance = 30.0
-
-[node name="Drink" type="AudioStreamPlayer3D" parent="." unique_id=1313398115]
-max_distance = 20.0
