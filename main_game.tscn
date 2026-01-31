@@ -8,13 +8,14 @@
 [ext_resource type="Texture2D" uid="uid://6ec0dsbmmtfy" path="res://Models/Puzzle_Paintings/Puzzle_Paintings_Painting3.png" id="4_02kkc"]
 [ext_resource type="Texture2D" uid="uid://dvnqkovm8toyj" path="res://Models/Puzzle_Paintings/Puzzle_Paintings_Painting4.png" id="5_aomqu"]
 [ext_resource type="Texture2D" uid="uid://53o5g21mgxbi" path="res://Models/Puzzle_Paintings/Puzzle_Paintings_painting5.png" id="6_krmtw"]
-[ext_resource type="PackedScene" uid="uid://bbpvq1twn63rk" path="res://Tscn/Player/ExampleNote.tscn" id="9_4srsv"]
 [ext_resource type="PackedScene" uid="uid://5a2ta0u6lepi" path="res://chests.tscn" id="10_mf81u"]
 [ext_resource type="PackedScene" uid="uid://bnwve2nhljql4" path="res://code_lock.tscn" id="11_02kkc"]
 [ext_resource type="PackedScene" uid="uid://dibg86k4kmtx6" path="res://Tscn/Clocks/clock_2.tscn" id="13_jgkyn"]
 [ext_resource type="PackedScene" uid="uid://cva7fvmlxkwln" path="res://Tscn/Clocks/clock_1.tscn" id="13_krmtw"]
 [ext_resource type="PackedScene" uid="uid://kg43t7p8h663" path="res://Tscn/Clocks/clock_3.tscn" id="14_qpaub"]
 [ext_resource type="PackedScene" uid="uid://rwrj2kpqpx2o" path="res://Tscn/game_manager.tscn" id="15_qpaub"]
+[ext_resource type="PackedScene" uid="uid://yk5uus83b5te" path="res://Tscn/note.tscn" id="16_an1vu"]
+[ext_resource type="PackedScene" uid="uid://bbt3y1nehca1j" path="res://Tscn/book.tscn" id="16_borgi"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_px6mo"]
 resource_name = "Material"
@@ -249,24 +250,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.7895775, 1.1707963, -4.5691
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1680402485]
 environment = SubResource("Environment_l5ukw")
 
-[node name="Note" parent="." unique_id=2076376056 instance=ExtResource("9_4srsv")]
-transform = Transform3D(4.37114e-09, 0.90000004, 0, -0.100000024, 3.934025e-08, 0, 0, 0, -0.9999999, -29.727512, 1.9463089, -18.29226)
-text = "Pray, give due regard to the adornments upon the walls, for they were not set there by idle hand. Those who observe with patience may find their arrangement… instructive."
-
-[node name="Note2" parent="." unique_id=57040904 instance=ExtResource("9_4srsv")]
-transform = Transform3D(-1.910686e-16, -3.934025e-08, 1, -0.100000024, 3.934025e-08, 0, 4.37114e-09, 0.90000004, 4.371139e-08, 39.55356, 2.6410246, -52.263668)
-text = "Mark well the moments when time itself speaks. The clock’s voice is not mere ceremony; to those who listen closely, the minute it strikes falls with purpose."
-
-[node name="InChestNote" parent="." unique_id=1237082202 instance=ExtResource("9_4srsv")]
-transform = Transform3D(-1.910686e-16, -3.934025e-08, 1, -0.100000024, 3.934025e-08, 0, 4.37114e-09, 0.90000004, 4.371139e-08, 34.74784, 0.7663357, -44.777916)
-text = "JOSH IS A BITCH"
-
 [node name="Chests" parent="." unique_id=165414201 instance=ExtResource("10_mf81u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.350716, 0, -44.853573)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.270863, 0, -44.853573)
 
 [node name="CodeLock" parent="." unique_id=1517634232 instance=ExtResource("11_02kkc")]
 transform = Transform3D(0.017755127, 2.2945064e-09, 3.1998181, -2.51408e-07, 1.425, -1.1841399e-16, 1.6649053, 2.1515677e-07, -0.03412397, 34.86813, 1.1527047, -44.624687)
-code = "AAA"
+code = "AXE"
 chest = NodePath("../Chests")
 
 [node name="Clock1" parent="." unique_id=1823690887 instance=ExtResource("13_krmtw")]
@@ -279,3 +268,14 @@ transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 0.12828708, 0, 7.7624407, 6.496862
 transform = Transform3D(-4.371139e-08, -0.12828708, 4.371139e-08, 0, -5.6076064e-09, -1, 1, -5.6076064e-09, 1.9106855e-15, 51.0436, 5.704872, -28.706253)
 
 [node name="GameManager" parent="." unique_id=1276094089 instance=ExtResource("15_qpaub")]
+
+[node name="Note3" parent="." unique_id=1603093126 instance=ExtResource("16_an1vu")]
+transform = Transform3D(0.05494847, 0.0025595054, 0.5607501, -0.0045523476, 0.030894155, -0.046456784, -0.31927407, -5.6368275e-11, 0.09716996, -29.518154, 1.97248, -18.472204)
+text = "Pray, give due regard to the adornments upon the walls, for they were not set there by idle hand. Those who observe with patience may find their arrangement… instructive."
+
+[node name="Note" parent="." unique_id=2015880843 instance=ExtResource("16_an1vu")]
+transform = Transform3D(0.2391373, 0, -0.5927302, 0, 0.039, 0, 0.33672294, 0, 0.42095116, 40.201717, 2.6351733, -52.103184)
+text = "Mark well the moments when time itself speaks. The clock’s voice is not mere ceremony; to those who listen closely, the minute it strikes falls with purpose."
+
+[node name="Book" parent="." unique_id=1170688364 instance=ExtResource("16_borgi")]
+transform = Transform3D(0.27439025, -0.021547271, 0, 0.099869885, 0.059200637, 0, 0, 0, 0.559, 35.084564, 0.5112146, -44.74031)
