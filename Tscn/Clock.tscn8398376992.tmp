@@ -36,5 +36,6 @@ max_distance = 50.0
 
 [node name="Timer" type="Timer" parent="Marker3D" unique_id=1642276279]
 wait_time = 80.0
+autostart = true
 
 [connection signal="timeout" from="Marker3D/Timer" to="Marker3D" method="_on_timer_timeout"]
