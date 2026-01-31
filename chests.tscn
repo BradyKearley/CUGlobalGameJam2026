@@ -1,4 +1,6 @@
-[gd_scene format=4 uid="uid://daauhjv3t7l72"]
+[gd_scene format=4 uid="uid://5a2ta0u6lepi"]
+
+[ext_resource type="Script" uid="uid://c76o6ixl4bm6q" path="res://chests.gd" id="1_v0bg8"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_13ups"]
 resource_name = "lock"
@@ -185,9 +187,10 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_qwqyq")
 
 [node name="Chests" type="Node3D" unique_id=165414201]
+script = ExtResource("1_v0bg8")
 
 [node name="LockedChest" type="MeshInstance3D" parent="." unique_id=1146485806]
-transform = Transform3D(0.19767189, 0, 0, 0, 0.19767189, 0, 0, 0, 0.07751623, -2.4792027, 1.0450319, 1.0665858)
+transform = Transform3D(0.19767189, 0, 0, 0, 0.19767189, 0, 0, 0, 0.07751623, 2.5194771, 1.0450319, 1.0665858)
 mesh = SubResource("ArrayMesh_dhnhc")
 
 [node name="UnlockedChest" type="MeshInstance3D" parent="." unique_id=1091686095]

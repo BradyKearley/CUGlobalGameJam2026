@@ -16,6 +16,7 @@ var bartenderUiPresent = false
 var interactPopupPresent = false
 var currentInteractPopup = null
 var heldDrink = "None"
+var currentLock = null
 func _ready():
 	# Capture the mouse cursor
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -101,8 +102,9 @@ func _process(delta: float) -> void:
 						collider.get_parent().playDrink()
 				elif collider.is_in_group("CodeLock") and not lockUiPresent:
 					hideInteractPopup()
+					currentLock = collider.get_parent()
 					var lock_ui_instance = combinationLockUi.instantiate()
-					lock_ui_instance.correct_combination = collider.get_parent().code
+					lock_ui_instance.correct_combination = currentLock.code
 					add_child(lock_ui_instance)
 					# Connect the signals to handle lock events
 					lock_ui_instance.lock_closed.connect(resetMouseFromLock)
@@ -151,7 +153,15 @@ func resetMouseFromLock():
 func onLockOpened():
 	lockUiPresent = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	# Add your unlock logic here - what happens when the lock opens?
+	# Unlock the chest associated with this lock
+	if currentLock and currentLock.chest:
+		var chest_node = get_node(currentLock.chest)
+		if chest_node and chest_node.has_method("unlock"):
+			chest_node.unlock()
+		# Delete the code lock after unlocking
+		currentLock.queue_free()
+	currentLock = null
+	
 
 func resetMouseFromBartender():
 	bartenderUiPresent = false
