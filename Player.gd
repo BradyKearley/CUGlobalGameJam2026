@@ -124,9 +124,9 @@ func _process(delta: float) -> void:
 					collider.get_parent().playVoice()
 				elif collider.is_in_group("Puzzle_Book"):
 					collider.interact()
-				# Hide interact popup if not looking at anything interactable
-				if not lookingAtInteractable and interactPopupPresent:
-					hideInteractPopup()
+		# Hide interact popup if not looking at anything interactable
+		if not lookingAtInteractable and interactPopupPresent:
+			hideInteractPopup()
 
 func showInteractPopup():
 	if not interactPopupPresent:
