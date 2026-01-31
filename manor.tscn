@@ -23,6 +23,11 @@ _data = {
 }
 point_count = 5
 
+[sub_resource type="BoxMesh" id="BoxMesh_lock"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lock"]
+size = Vector3(1, 1, 1)
+
 [node name="Manor" unique_id=868474849 instance=ExtResource("1_vkg0j")]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Plane" parent_id_path=PackedInt32Array(485886860) index="0" unique_id=90760154]
@@ -61,3 +66,14 @@ path_to_follow = NodePath("../Path3D")
 
 [node name="Path3D" type="Path3D" parent="." index="8" unique_id=446655319]
 curve = SubResource("Curve3D_0ndy8")
+
+[node name="CombinationLock3D" type="StaticBody3D" parent="." index="9" groups=["Lock"] unique_id=1234567890]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1.5, -20)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CombinationLock3D" unique_id=1234567891]
+mesh = SubResource("BoxMesh_lock")
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CombinationLock3D" unique_id=1234567892]
+shape = SubResource("BoxShape3D_lock")
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.1, 0, 0, 0)

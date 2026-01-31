@@ -1,5 +1,107 @@
 [gd_scene format=3 uid="uid://dwj2l5ethhw4a"]
 
+[ext_resource type="FontFile" uid="uid://dyn2h8swbrum5" path="res://Font/Tangerine-Regular.ttf" id="1_font"]
+
+[sub_resource type="GDScript" id="GDScript_1"]
+script/source = "extends Control
+
+signal lock_closed
+signal lock_opened
+
+var correct_combination = \"ABC\"  # Change this to your desired combination
+var current_input = \"\"
+
+@onready var input1 = $Panel/HBoxContainer/Input1
+@onready var input2 = $Panel/HBoxContainer/Input2  
+@onready var input3 = $Panel/HBoxContainer/Input3
+@onready var status_label = $Panel/StatusLabel
+@onready var submit_button = $Panel/SubmitButton
+
+func _ready():
+	# Focus first input
+	input1.grab_focus()
+
+func _on_input1_text_changed(new_text: String):
+	if new_text.length() > 0:
+		input2.grab_focus()
+	update_submit_button()
+
+func _on_input2_text_changed(new_text: String):
+	if new_text.length() > 0:
+		input3.grab_focus()
+	update_submit_button()
+
+func _on_input3_text_changed(new_text: String):
+	update_submit_button()
+
+func update_submit_button():
+	var all_filled = input1.text.length() > 0 and input2.text.length() > 0 and input3.text.length() > 0
+	submit_button.disabled = not all_filled
+
+func _on_input_changed(current_field: LineEdit, next_field: LineEdit, new_text: String):
+	if new_text.length() > 0 and next_field:
+		next_field.grab_focus()
+	
+	# Update submit button state
+	var all_filled = input1.text.length() > 0 and input2.text.length() > 0 and input3.text.length() > 0
+	submit_button.disabled = not all_filled
+
+func _on_submit_pressed():
+	current_input = (input1.text + input2.text + input3.text).to_upper()
+	
+	if current_input == correct_combination:
+		status_label.text = \"UNLOCKED!\"
+		await get_tree().create_timer(1.0).timeout
+		lock_opened.emit()
+		queue_free()
+	else:
+		status_label.text = \"INCORRECT\"
+		
+		# Clear inputs and shake effect
+		clear_inputs()
+		create_shake_effect()
+		
+		await get_tree().create_timer(2.0).timeout
+
+func clear_inputs():
+	input1.text = \"\"
+	input2.text = \"\"
+	input3.text = \"\"
+	input1.grab_focus()
+	submit_button.disabled = true
+
+func create_shake_effect():
+	var panel = $Panel
+	var original_pos = panel.position
+	var tween = create_tween()
+	tween.set_loops(4)
+	tween.tween_method(shake_panel, 0.0, 1.0, 0.1)
+	tween.tween_callback(func(): panel.position = original_pos)
+
+func shake_panel(progress: float):
+	var panel = $Panel
+	var shake_strength = 10.0 * sin(progress * PI * 2 * 10)
+	panel.position.x += shake_strength
+
+func _on_close_pressed():
+	lock_closed.emit()
+	queue_free()
+
+func _input(event):
+	if event.is_action_pressed(\"ui_cancel\"):  # ESC key
+		_on_close_pressed()
+"
+
+[sub_resource type="LabelSettings" id="LabelSettings_title"]
+font = ExtResource("1_font")
+font_size = 48
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_status"]
+font = ExtResource("1_font")
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+
 [node name="Combination lock" type="Control" unique_id=777049189]
 layout_mode = 3
 anchors_preset = 15
@@ -7,3 +109,121 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = SubResource("GDScript_1")
+
+[node name="Panel" type="Panel" parent="." unique_id=1001]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -150.0
+offset_right = 200.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="Panel" unique_id=1403386483]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -1.0
+offset_top = 9.0
+offset_right = -1.0
+offset_bottom = 59.0
+grow_horizontal = 2
+text = "Combination Lock"
+label_settings = SubResource("LabelSettings_title")
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel" unique_id=599224192]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = -20.0
+offset_right = 120.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Input1" type="LineEdit" parent="Panel/HBoxContainer" unique_id=1056236271]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "?"
+alignment = 1
+max_length = 1
+
+[node name="VSeparator" type="VSeparator" parent="Panel/HBoxContainer" unique_id=350174246]
+layout_mode = 2
+
+[node name="Input2" type="LineEdit" parent="Panel/HBoxContainer" unique_id=198941743]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "?"
+alignment = 1
+max_length = 1
+
+[node name="VSeparator2" type="VSeparator" parent="Panel/HBoxContainer" unique_id=397308387]
+layout_mode = 2
+
+[node name="Input3" type="LineEdit" parent="Panel/HBoxContainer" unique_id=1198724323]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "?"
+alignment = 1
+max_length = 1
+
+[node name="StatusLabel" type="Label" parent="Panel" unique_id=401423183]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -150.0
+offset_top = -100.0
+offset_right = 150.0
+offset_bottom = -70.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Enter 3-letter combination:"
+label_settings = SubResource("LabelSettings_status")
+horizontal_alignment = 1
+
+[node name="SubmitButton" type="Button" parent="Panel" unique_id=1403198967]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -50.0
+offset_top = -60.0
+offset_right = 50.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 0
+disabled = true
+text = "UNLOCK"
+
+[node name="CloseButton" type="Button" parent="." unique_id=1829452665]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -50.0
+offset_bottom = 50.0
+grow_horizontal = 0
+text = "X"
+
+[connection signal="text_changed" from="Panel/HBoxContainer/Input1" to="." method="_on_input1_text_changed"]
+[connection signal="text_changed" from="Panel/HBoxContainer/Input2" to="." method="_on_input2_text_changed"]
+[connection signal="text_changed" from="Panel/HBoxContainer/Input3" to="." method="_on_input3_text_changed"]
+[connection signal="pressed" from="Panel/SubmitButton" to="." method="_on_submit_pressed"]
+[connection signal="pressed" from="CloseButton" to="." method="_on_close_pressed"]

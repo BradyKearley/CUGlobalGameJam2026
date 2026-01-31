@@ -7,7 +7,9 @@ extends CharacterBody3D
 @onready var raycast = $Camera3D/RayCast3D
 
 const noteUi: PackedScene = preload("res://Tscn/Ui/note_ui.tscn");
+const combinationLockUi: PackedScene = preload("res://combination_lock.tscn");
 var noteUiPresent = false
+var lockUiPresent = false
 func _ready():
 	# Capture the mouse cursor
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -70,6 +72,24 @@ func _process(delta: float) -> void:
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		if collider.is_in_group("Voice") and Input.is_action_just_pressed("Interact"):
 			collider.get_parent().playVoice()
+		if collider.is_in_group("Lock") and Input.is_action_just_pressed("Interact") and not lockUiPresent:
+			var lock_ui_instance = combinationLockUi.instantiate()
+			add_child(lock_ui_instance)
+			# Connect the signals to handle lock events
+			lock_ui_instance.lock_closed.connect(resetMouseFromLock)
+			lock_ui_instance.lock_opened.connect(onLockOpened)
+			lockUiPresent = true
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 func resetMouse():
 	noteUiPresent = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
+func resetMouseFromLock():
+	lockUiPresent = false
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
+func onLockOpened():
+	lockUiPresent = false
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	# Add your unlock logic here - what happens when the lock opens?
+	print("Lock opened! Add your unlock logic here.")
