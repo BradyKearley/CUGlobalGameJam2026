@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://xb0mjtk15x0e"]
+
+[ext_resource type="PackedScene" uid="uid://b5ubmg5hcia71" path="res://Models/Puzzle_Paintings/Puzzle_Paintings.glb" id="1_jd8ke"]
+
+[node name="Puzzle_Paintings" unique_id=1254833532 instance=ExtResource("1_jd8ke")]

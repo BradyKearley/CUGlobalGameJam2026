@@ -1,0 +1,233 @@
+[gd_scene format=4 uid="uid://dbgrdlx4wx1vf"]
+
+[ext_resource type="PackedScene" uid="uid://c4s5wp2cmje0v" path="res://puzzle_books.tscn" id="1_l5ukw"]
+[ext_resource type="PackedScene" uid="uid://w5gpp1crt1ya" path="res://manor_2_0.tscn" id="1_yx7mw"]
+[ext_resource type="Texture2D" uid="uid://166vs6nd8e41" path="res://Models/Puzzle_Paintings/Puzzle_Paintings_Painting1.png" id="2_4srsv"]
+[ext_resource type="PackedScene" uid="uid://cw31esap3kng7" path="res://Tscn/Player/player.tscn" id="2_ykeeq"]
+[ext_resource type="Texture2D" uid="uid://cbfd0um80n32f" path="res://Models/Puzzle_Paintings/Puzzle_Paintings_Painting2.png" id="3_mf81u"]
+[ext_resource type="Texture2D" uid="uid://6ec0dsbmmtfy" path="res://Models/Puzzle_Paintings/Puzzle_Paintings_Painting3.png" id="4_02kkc"]
+[ext_resource type="Texture2D" uid="uid://dvnqkovm8toyj" path="res://Models/Puzzle_Paintings/Puzzle_Paintings_Painting4.png" id="5_aomqu"]
+[ext_resource type="Texture2D" uid="uid://53o5g21mgxbi" path="res://Models/Puzzle_Paintings/Puzzle_Paintings_painting5.png" id="6_krmtw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_px6mo"]
+resource_name = "Material"
+cull_mode = 2
+albedo_texture = ExtResource("2_4srsv")
+roughness = 0.5
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_jgkyn"]
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 2, 2),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAwACAAEAAAAEAAEAAwAFAAIABQAAAAIABgAEAAAABQAGAAAABwABAAQABwADAAEABgAHAAQABQADAAcABQAHAAYA"),
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("/////wAAAAAAAP////8AAAAA//8AAAAAAAAAAP//AAD///////8AAAAAAAAAAAAA//8AAAAAAAD//wAA//8AAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_qpaub"]
+resource_name = "Puzzle_Paintings_Cube"
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 2, 2),
+"attribute_data": PackedByteArray("ZvfVrBz6H6oc+tWsZvcfqkD+vgG+AUD+vgG+AUD+QP6w9EGyZveLr2b3QbKw9Iuv+vHVrLD0H6qw9NWs+vEfqrD01axm9x+qZvfVrLD0H6qw9IuvZvfVrGb3i6+w9NWs"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA"),
+"material": SubResource("StandardMaterial3D_px6mo"),
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("/////wAA//8AAP///////wAA//8AAP///////////////wAA////vwAA//////+//////////78AAAAA////vwAAAAD//1TVAAD//wAAVNUAAP////9U1QAAAAAAAFTVAAAAAAAA/7///wAA////v///AAAAAP+/AAAAAP///7///wAAAABU1f///////1TV/////wAAVNX//wAA//9U1QAAAAAAAP///////wAA//8AAP//AAD/////AAAAAP///3//v/9//7//f/+//3//v/9//3//f/9//3//f/9//39U1VTVVNVU1VTVVNVU1VTVAAD/fwAA/38AAP9/AAD/f6oqqiqqKqoqqiqqKqoqqir/v/+//7//v/+//7//v/+/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_jgkyn")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u26ft"]
+resource_name = "Material.001"
+cull_mode = 2
+albedo_texture = ExtResource("3_mf81u")
+roughness = 0.5
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_an1vu"]
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 2, 2),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAwACAAEAAAAEAAEAAwAFAAIABQAAAAIABgAEAAAABQAGAAAABwABAAQABwADAAEABgAHAAQABQADAAcABQAHAAYA"),
+"name": "Material.001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("/////wAAAAAAAP////8AAAAA//8AAAAAAAAAAP//AAD///////8AAAAAAAAAAAAA//8AAAAAAAD//wAA//8AAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_borgi"]
+resource_name = "Puzzle_Paintings_Cube_001"
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 2, 2),
+"attribute_data": PackedByteArray("ZvfVrBz6H6oc+tWsZvcfqkD+vgG+AUD+vgG+AUD+QP6w9EGyZveLr2b3QbKw9Iuv+vHVrLD0H6qw9NWs+vEfqrD01axm9x+qZvfVrLD0H6qw9IuvZvfVrGb3i6+w9NWs"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA"),
+"material": SubResource("StandardMaterial3D_u26ft"),
+"name": "Material.001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("/////wAA//8AAP///////wAA//8AAP///////////////wAA////vwAA//////+//////////78AAAAA////vwAAAAD//1TVAAD//wAAVNUAAP////9U1QAAAAAAAFTVAAAAAAAA/7///wAA////v///AAAAAP+/AAAAAP///7///wAAAABU1f///////1TV/////wAAVNX//wAA//9U1QAAAAAAAP///////wAA//8AAP//AAD/////AAAAAP///3//v/9//7//f/+//3//v/9//3//f/9//3//f/9//39U1VTVVNVU1VTVVNVU1VTVAAD/fwAA/38AAP9/AAD/f6oqqiqqKqoqqiqqKqoqqir/v/+//7//v/+//7//v/+/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_an1vu")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_asjm3"]
+resource_name = "Material.002"
+cull_mode = 2
+albedo_texture = ExtResource("4_02kkc")
+roughness = 0.5
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ih6an"]
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 2, 2),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAwACAAEAAAAEAAEAAwAFAAIABQAAAAIABgAEAAAABQAGAAAABwABAAQABwADAAEABgAHAAQABQADAAcABQAHAAYA"),
+"name": "Material.002",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("/////wAAAAAAAP////8AAAAA//8AAAAAAAAAAP//AAD///////8AAAAAAAAAAAAA//8AAAAAAAD//wAA//8AAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_umrn2"]
+resource_name = "Puzzle_Paintings_Cube_002"
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 2, 2),
+"attribute_data": PackedByteArray("ZvfVrBz6H6oc+tWsZvcfqkD+vgG+AUD+vgG+AUD+QP6w9EGyZveLr2b3QbKw9Iuv+vHVrLD0H6qw9NWs+vEfqrD01axm9x+qZvfVrLD0H6qw9IuvZvfVrGb3i6+w9NWs"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA"),
+"material": SubResource("StandardMaterial3D_asjm3"),
+"name": "Material.002",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("/////wAA//8AAP///////wAA//8AAP///////////////wAA////vwAA//////+//////////78AAAAA////vwAAAAD//1TVAAD//wAAVNUAAP////9U1QAAAAAAAFTVAAAAAAAA/7///wAA////v///AAAAAP+/AAAAAP///7///wAAAABU1f///////1TV/////wAAVNX//wAA//9U1QAAAAAAAP///////wAA//8AAP//AAD/////AAAAAP///3//v/9//7//f/+//3//v/9//3//f/9//3//f/9//39U1VTVVNVU1VTVVNVU1VTVAAD/fwAA/38AAP9/AAD/f6oqqiqqKqoqqiqqKqoqqir/v/+//7//v/+//7//v/+/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_ih6an")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q83ea"]
+resource_name = "Material.003"
+cull_mode = 2
+albedo_texture = ExtResource("5_aomqu")
+roughness = 0.5
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_2i4tw"]
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 2, 2),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAwACAAEAAAAEAAEAAwAFAAIABQAAAAIABgAEAAAABQAGAAAABwABAAQABwADAAEABgAHAAQABQADAAcABQAHAAYA"),
+"name": "Material.003",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("/////wAAAAAAAP////8AAAAA//8AAAAAAAAAAP//AAD///////8AAAAAAAAAAAAA//8AAAAAAAD//wAA//8AAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_euc45"]
+resource_name = "Puzzle_Paintings_Cube_003"
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 2, 2),
+"attribute_data": PackedByteArray("ZvfVrBz6H6oc+tWsZvcfqkD+vgG+AUD+vgG+AUD+QP6w9EGyZveLr2b3QbKw9Iuv+vHVrLD0H6qw9NWs+vEfqrD01axm9x+qZvfVrLD0H6qw9IuvZvfVrGb3i6+w9NWs"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA"),
+"material": SubResource("StandardMaterial3D_q83ea"),
+"name": "Material.003",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("/////wAA//8AAP///////wAA//8AAP///////////////wAA////vwAA//////+//////////78AAAAA////vwAAAAD//1TVAAD//wAAVNUAAP////9U1QAAAAAAAFTVAAAAAAAA/7///wAA////v///AAAAAP+/AAAAAP///7///wAAAABU1f///////1TV/////wAAVNX//wAA//9U1QAAAAAAAP///////wAA//8AAP//AAD/////AAAAAP///3//v/9//7//f/+//3//v/9//3//f/9//3//f/9//39U1VTVVNVU1VTVVNVU1VTVAAD/fwAA/38AAP9/AAD/f6oqqiqqKqoqqiqqKqoqqir/v/+//7//v/+//7//v/+/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_2i4tw")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ekerk"]
+resource_name = "Material.004"
+cull_mode = 2
+albedo_texture = ExtResource("6_krmtw")
+roughness = 0.5
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_vn0ol"]
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 2, 2),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAwACAAEAAAAEAAEAAwAFAAIABQAAAAIABgAEAAAABQAGAAAABwABAAQABwADAAEABgAHAAQABQADAAcABQAHAAYA"),
+"name": "Material.004",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("/////wAAAAAAAP////8AAAAA//8AAAAAAAAAAP//AAD///////8AAAAAAAAAAAAA//8AAAAAAAD//wAA//8AAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_wt57k"]
+resource_name = "Puzzle_Paintings_Cube_004"
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 2, 2),
+"attribute_data": PackedByteArray("ZvfVrBz6H6oc+tWsZvcfqkD+vgG+AUD+vgG+AUD+QP6w9EGyZveLr2b3QbKw9Iuv+vHVrLD0H6qw9NWs+vEfqrD01axm9x+qZvfVrLD0H6qw9IuvZvfVrGb3i6+w9NWs"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA"),
+"material": SubResource("StandardMaterial3D_ekerk"),
+"name": "Material.004",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("/////wAA//8AAP///////wAA//8AAP///////////////wAA////vwAA//////+//////////78AAAAA////vwAAAAD//1TVAAD//wAAVNUAAP////9U1QAAAAAAAFTVAAAAAAAA/7///wAA////v///AAAAAP+/AAAAAP///7///wAAAABU1f///////1TV/////wAAVNX//wAA//9U1QAAAAAAAP///////wAA//8AAP//AAD/////AAAAAP///3//v/9//7//f/+//3//v/9//3//f/9//3//f/9//39U1VTVVNVU1VTVVNVU1VTVAAD/fwAA/38AAP9/AAD/f6oqqiqqKqoqqiqqKqoqqir/v/+//7//v/+//7//v/+/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_vn0ol")
+
+[node name="MainGame" type="Node3D" unique_id=32643188]
+
+[node name="Puzzle_Books" parent="." unique_id=646691581 instance=ExtResource("1_l5ukw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.863544, 1.8876748, -11.967077)
+
+[node name="Paintings" type="Node" parent="." unique_id=1446651104]
+
+[node name="Painting1" type="MeshInstance3D" parent="Paintings" unique_id=1591887108]
+transform = Transform3D(-6.556708e-08, -1.5, 0, 1.5, -6.556708e-08, 0, 0, 0, 0.14, 21.91658, 3.8324034, -53.93419)
+mesh = SubResource("ArrayMesh_qpaub")
+
+[node name="Painting2" type="MeshInstance3D" parent="Paintings" unique_id=706790952]
+transform = Transform3D(-6.556708e-08, -1.5, 0, 1.5, -6.556708e-08, 0, 0, 0, 0.14, -14.693787, 3.5574718, -48.49309)
+mesh = SubResource("ArrayMesh_borgi")
+
+[node name="Painting3" type="MeshInstance3D" parent="Paintings" unique_id=1323052167]
+transform = Transform3D(2.8660283e-15, 6.556708e-08, -0.14, 1.5, -6.556708e-08, 0, -6.556708e-08, -1.5, -6.119594e-09, 14.905085, 3.3535872, -25.93634)
+mesh = SubResource("ArrayMesh_umrn2")
+
+[node name="Painting4" type="MeshInstance3D" parent="Paintings" unique_id=909720616]
+transform = Transform3D(2.8660283e-15, 6.556708e-08, -0.14, 1.5, -6.556708e-08, 0, -6.556708e-08, -1.5, -6.119594e-09, -0.6024239, 3.7374225, -26.448048)
+mesh = SubResource("ArrayMesh_euc45")
+
+[node name="Painting5" type="MeshInstance3D" parent="Paintings" unique_id=820681880]
+transform = Transform3D(-6.556708e-08, -1.5, 0, 1.5, -6.556708e-08, 0, 0, 0, 0.14, 29.544483, 3.89039, -33.334236)
+mesh = SubResource("ArrayMesh_wt57k")
+
+[node name="Manor2_0" parent="." unique_id=1119379920 instance=ExtResource("1_yx7mw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.003537178, 0.058179855, 0.0128479)
+
+[node name="Player" parent="." unique_id=207691121 instance=ExtResource("2_ykeeq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.7895775, 1.1707963, -4.5691004)
