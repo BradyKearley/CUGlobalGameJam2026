@@ -6,8 +6,8 @@ extends CharacterBody3D
 @onready var camera = $Camera3D
 @onready var raycast = $Camera3D/RayCast3D
 
-const noteUi: PackedScene = preload("res://Tscn/Ui/note_ui.tscn");
-const combinationLockUi: PackedScene = preload("res://combination_lock.tscn");
+const noteUi: PackedScene = preload("res://Tscn/Ui/note_ui.tscn")
+const combinationLockUi: PackedScene = preload("res://combination_lock.tscn")
 var noteUiPresent = false
 var lockUiPresent = false
 func _ready():
@@ -28,14 +28,15 @@ func _input(event):
 func _physics_process(delta):
 	# Handle WASD movement
 	var input_dir = Vector3.ZERO
-	if Input.is_action_pressed("D"): # D key
-		input_dir.x += 1
-	if Input.is_action_pressed("A"): # A key
-		input_dir.x -= 1
-	if Input.is_action_pressed("S"): # S key
-		input_dir.z += 1
-	if Input.is_action_pressed("W"): # W key
-		input_dir.z -= 1
+	if not noteUiPresent and not lockUiPresent:
+		if Input.is_action_pressed("D"): # D key
+			input_dir.x += 1
+		if Input.is_action_pressed("A"): # A key
+			input_dir.x -= 1
+		if Input.is_action_pressed("S"): # S key
+			input_dir.z += 1
+		if Input.is_action_pressed("W"): # W key
+			input_dir.z -= 1
 	
 	# Transform movement relative to player's rotation (where you're looking)
 	if input_dir != Vector3.ZERO:
@@ -72,8 +73,9 @@ func _process(delta: float) -> void:
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		if collider.is_in_group("Voice") and Input.is_action_just_pressed("Interact"):
 			collider.get_parent().playVoice()
-		if collider.is_in_group("Lock") and Input.is_action_just_pressed("Interact") and not lockUiPresent:
+		if collider.is_in_group("CodeLock") and Input.is_action_just_pressed("Interact") and not lockUiPresent:
 			var lock_ui_instance = combinationLockUi.instantiate()
+			lock_ui_instance.correct_combination = collider.get_parent().code
 			add_child(lock_ui_instance)
 			# Connect the signals to handle lock events
 			lock_ui_instance.lock_closed.connect(resetMouseFromLock)
@@ -92,4 +94,3 @@ func onLockOpened():
 	lockUiPresent = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	# Add your unlock logic here - what happens when the lock opens?
-	print("Lock opened! Add your unlock logic here.")

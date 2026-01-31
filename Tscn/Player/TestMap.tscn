@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://rwrj2kpqpx2o" path="res://Tscn/game_manager.tscn" id="7_un6sn"]
 [ext_resource type="PackedScene" uid="uid://b0dvaq7xi83ms" path="res://Tscn/Clock.tscn" id="8_viy3q"]
 [ext_resource type="PackedScene" uid="uid://br6qebqohpdft" path="res://TestPerson.tscn" id="9_abc123"]
+[ext_resource type="PackedScene" uid="uid://bnwve2nhljql4" path="res://code_lock.tscn" id="10_w7tib"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_trbfg"]
 
@@ -97,3 +98,7 @@ path_to_follow = NodePath("../Path3D")
 [node name="Path3D" type="Path3D" parent="." unique_id=1745892307]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.38974106, 0)
 curve = SubResource("Curve3D_3n6f3")
+
+[node name="CodeLock" parent="." unique_id=770823836 instance=ExtResource("10_w7tib")]
+transform = Transform3D(-0.100000024, 0, 0, 0, 0.9, 0, 0, 0, 1, 2.3249683, 0, 0)
+code = "aaa"

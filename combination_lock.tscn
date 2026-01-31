@@ -8,7 +8,7 @@ script/source = "extends Control
 signal lock_closed
 signal lock_opened
 
-var correct_combination = \"ABC\"  # Change this to your desired combination
+var correct_combination: String
 var current_input = \"\"
 
 @onready var input1 = $Panel/HBoxContainer/Input1
@@ -49,7 +49,7 @@ func _on_input_changed(current_field: LineEdit, next_field: LineEdit, new_text: 
 func _on_submit_pressed():
 	current_input = (input1.text + input2.text + input3.text).to_upper()
 	
-	if current_input == correct_combination:
+	if current_input == correct_combination.to_upper():
 		status_label.text = \"UNLOCKED!\"
 		await get_tree().create_timer(1.0).timeout
 		lock_opened.emit()
