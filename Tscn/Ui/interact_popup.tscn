@@ -11,16 +11,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Panel" type="Panel" parent="." unique_id=989670239]
+[node name="Label" type="Label" parent="." unique_id=278824574]
 layout_mode = 0
 offset_left = 695.0
 offset_top = 303.0
 offset_right = 791.0
-offset_bottom = 343.0
-
-[node name="Label" type="Label" parent="Panel" unique_id=278824574]
-layout_mode = 0
-offset_right = 94.0
-offset_bottom = 38.0
+offset_bottom = 342.0
 text = "Press E"
 label_settings = SubResource("LabelSettings_i7yib")
