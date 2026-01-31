@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bbpvq1twn63rk" path="res://Tscn/Player/ExampleNote.tscn" id="9_4srsv"]
 [ext_resource type="PackedScene" uid="uid://5a2ta0u6lepi" path="res://chests.tscn" id="10_mf81u"]
 [ext_resource type="PackedScene" uid="uid://bnwve2nhljql4" path="res://code_lock.tscn" id="11_02kkc"]
+[ext_resource type="PackedScene" uid="uid://b0dvaq7xi83ms" path="res://Tscn/Clock.tscn" id="12_aomqu"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_px6mo"]
 resource_name = "Material"
@@ -251,7 +252,7 @@ text = "Pray, give due regard to the adornments upon the walls, for they were no
 
 [node name="Note2" parent="." unique_id=57040904 instance=ExtResource("9_4srsv")]
 transform = Transform3D(-1.910686e-16, -3.934025e-08, 1, -0.100000024, 3.934025e-08, 0, 4.37114e-09, 0.90000004, 4.371139e-08, 39.55356, 2.6410246, -52.263668)
-text = "Mark well the moments when time itself speaks. The clock’s voice is not mere ceremony; to those who listen closely, its strikes fall with purpose."
+text = "Mark well the moments when time itself speaks. The clock’s voice is not mere ceremony; to those who listen closely, the minute it strikes falls with purpose."
 
 [node name="InChestNote" parent="." unique_id=1237082202 instance=ExtResource("9_4srsv")]
 transform = Transform3D(-1.910686e-16, -3.934025e-08, 1, -0.100000024, 3.934025e-08, 0, 4.37114e-09, 0.90000004, 4.371139e-08, 34.74784, 0.7663357, -44.777916)
@@ -264,3 +265,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.350716, 0, -44.853573)
 transform = Transform3D(0.017755127, 2.2945064e-09, 3.1998181, -2.51408e-07, 1.425, -1.1841399e-16, 1.6649053, 2.1515677e-07, -0.03412397, 34.86813, 1.1527047, -44.624687)
 code = "AAA"
 chest = NodePath("../Chests")
+
+[node name="MultiMeshInstance3D" parent="." unique_id=2027109289 instance=ExtResource("12_aomqu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.178298, 3.267969, -7.5193114)
+clockRingTime = 80

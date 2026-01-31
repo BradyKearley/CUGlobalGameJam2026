@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://c5vt8rr2ft4av" path="res://Tscn/clock.gd" id="1_dna3g"]
 [ext_resource type="Material" uid="uid://yjeanh1o4gtq" path="res://Materials/ClockHand.tres" id="1_rqhue"]
 [ext_resource type="AudioStream" uid="uid://bq2jx6xqlnugu" path="res://SFX/CLOCKChim-The_antique_clock_ch-Elevenlabs.mp3" id="3_k3hab"]
+[ext_resource type="Material" uid="uid://qheggeoc4wsx" path="res://Materials/RedClockHand.tres" id="5_8er4d"]
 
 [sub_resource type="MultiMesh" id="MultiMesh_1uqh6"]
 
@@ -19,22 +20,43 @@ script = ExtResource("1_dna3g")
 transform = Transform3D(1, 0, 0, 0, -4.371139e-09, -1, 0, 0.1, -4.371139e-08, 0, 0, 0)
 mesh = SubResource("CylinderMesh_k3hab")
 
-[node name="Marker3D" type="Marker3D" parent="." unique_id=519138211]
+[node name="HourHand" type="Marker3D" parent="." unique_id=519138211]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.006, 0, 0)
 script = ExtResource("1_1uqh6")
-loopRatio = 1
+loopRatio = 12.0
+starting_rotation = -25.0
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Marker3D" unique_id=1560183082]
-transform = Transform3D(0.030342527, 0, 0, 0, 0.38294536, 0, 0, 0, -0.06765894, 0, 0.24603906, 0.103548616)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="HourHand" unique_id=1560183082]
+transform = Transform3D(0.03, 1.949528e-08, 0, -2.6226832e-09, 0.223, 0, 0, 0, -0.068, 0, 0.1578879, 0.103548616)
 material_override = ExtResource("1_rqhue")
 mesh = SubResource("BoxMesh_rqhue")
 
-[node name="ClockSound" type="AudioStreamPlayer3D" parent="Marker3D" unique_id=1378167526]
+[node name="ClockSound" type="AudioStreamPlayer3D" parent="HourHand" unique_id=1378167526]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.006, 0, 0)
 stream = ExtResource("3_k3hab")
 max_distance = 50.0
 
-[node name="Timer" type="Timer" parent="Marker3D" unique_id=1642276279]
+[node name="Timer" type="Timer" parent="HourHand" unique_id=1642276279]
 wait_time = 80.0
 
-[connection signal="timeout" from="Marker3D/Timer" to="Marker3D" method="_on_timer_timeout"]
+[node name="MinuteHand" type="Marker3D" parent="." unique_id=575466146]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.006, 0, 0)
+script = ExtResource("1_1uqh6")
+loopRatio = 1.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MinuteHand" unique_id=869970229]
+transform = Transform3D(0.015, 3.3482923e-08, 0, -1.3113416e-09, 0.383, 0, 0, 0, -0.068, 0, 0.24603906, 0.103548616)
+material_override = ExtResource("1_rqhue")
+mesh = SubResource("BoxMesh_rqhue")
+
+[node name="SecondHand" type="Marker3D" parent="." unique_id=1604434056]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.006, 0, 0)
+script = ExtResource("1_1uqh6")
+loopRatio = 0.08
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SecondHand" unique_id=69491301]
+transform = Transform3D(0.015, 3.3482923e-08, 0, -1.3113416e-09, 0.383, 0, 0, 0, -0.068, 0, 0.24603906, 0.10441351)
+material_override = ExtResource("5_8er4d")
+mesh = SubResource("BoxMesh_rqhue")
+
+[connection signal="timeout" from="HourHand/Timer" to="HourHand" method="_on_timer_timeout"]
