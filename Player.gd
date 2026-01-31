@@ -67,7 +67,7 @@ func _process(delta: float) -> void:
 	
 	if result:
 		var collider = result.collider
-		if collider.is_in_group("Note") or collider.is_in_group("Voice") or collider.is_in_group("CodeLock"):
+		if collider.is_in_group("Note") or collider.is_in_group("Voice") or collider.is_in_group("CodeLock") or collider.is_in_group("Puzzle_Book"):
 			lookingAtInteractable = true
 			
 			# Show interact popup if not already shown and no other UI is open
@@ -98,6 +98,9 @@ func _process(delta: float) -> void:
 					lock_ui_instance.lock_opened.connect(onLockOpened)
 					lockUiPresent = true
 					Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+				elif collider.is_in_group("Puzzle_Book"):
+					collider.interact()
+					
 	
 	# Hide interact popup if not looking at anything interactable
 	if not lookingAtInteractable and interactPopupPresent:

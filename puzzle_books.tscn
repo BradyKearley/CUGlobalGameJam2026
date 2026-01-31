@@ -1,0 +1,216 @@
+[gd_scene format=4 uid="uid://c4s5wp2cmje0v"]
+
+[ext_resource type="Script" uid="uid://ia31hssg3j8m" path="res://book_puzzle.gd" id="1_2pa1c"]
+[ext_resource type="Texture2D" uid="uid://mubbt7xqerm3" path="res://Models/PuzzleBooks/Puzzle_Books_57_reinassance plaster texture seamless.jpg" id="2_7iysl"]
+[ext_resource type="Script" uid="uid://ctj5vvv5l8ade" path="res://book.gd" id="3_tivom"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vb7sh"]
+resource_name = "Den_Walls"
+cull_mode = 2
+albedo_texture = ExtResource("2_7iysl")
+roughness = 0.8
+uv1_scale = Vector3(12, 12, 1)
+uv1_offset = Vector3(0, -11, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1tibm"]
+resource_name = "purplebook"
+cull_mode = 2
+albedo_color = Color(0.58388627, 0.21759535, 0.9063355, 1)
+roughness = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_88f1h"]
+resource_name = "BlueBook"
+cull_mode = 2
+albedo_color = Color(0.23829153, 0.1561289, 0.9063355, 1)
+roughness = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ptqk3"]
+resource_name = "Chandelier"
+cull_mode = 2
+albedo_color = Color(0.9063355, 0.6630838, 0.27534473, 1)
+roughness = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x26cg"]
+resource_name = "Bed"
+cull_mode = 2
+albedo_color = Color(0.36708224, 0.11470234, 0.09693925, 1)
+roughness = 0.5
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_w8hpv"]
+_surfaces = [{
+"aabb": AABB(3.0861216, -9.262255, -1.0000001, 2, 2, 1.9999998),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAACAAEAAwAEAAEABQAAAAIAAwAAAAUABAAGAAIABQACAAYAAwAHAAQAAwAFAAcABwAGAAQABwAFAAYA"),
+"name": "Den_Walls",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAAP//AAAAAP//AAAAAAAA/////wAAAAAAAAAAAAD/////AAAAAP//AAD//wAA////////AAD//wAAAAAAAA==")
+}, {
+"aabb": AABB(23.992237, -0.93190193, -1.0000321, 2.5495987, 2.0482836, 1.9999998),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAACAAEAAwAEAAEABQAAAAIAAwAAAAUABAAGAAIABQACAAYAAwAHAAQAAwAFAAcABwAGAAQABwAFAAYA"),
+"name": "purplebook",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("+DcAAP//AAAAAPv4AAAAAAAA+/j//wAA+DcAAAAAAAAGyP//AAAAAP//Awf//wAABsj/////AAD//wMHAAAAAA==")
+}, {
+"aabb": AABB(6.793991, -0.9943247, -1.0000639, 2, 2, 1.9999998),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAACAAEAAwAEAAEABQAAAAIAAwAAAAUABAAGAAIABQACAAYAAwAHAAQAAwAFAAcABwAGAAQABwAFAAYA"),
+"name": "BlueBook",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAAP//AAAAAP//AAAAAAAA/////wAAAAAAAAAAAAD/////AAAAAP//AAD//wAA////////AAD//wAAAAAAAA==")
+}, {
+"aabb": AABB(17.248932, -5.055263, -1.0000325, 2, 2, 1.9999998),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAACAAEAAwAEAAEABQAAAAIAAwAAAAUABAAGAAIABQACAAYAAwAHAAQAAwAFAAcABwAGAAQABwAFAAYA"),
+"name": "Chandelier",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAAP//AAAAAP//AAAAAAAA/////wAAAAAAAAAAAAD/////AAAAAP//AAD//wAA////////AAD//wAAAAAAAA==")
+}, {
+"aabb": AABB(24.353302, -9.167002, -1.0000008, 2, 1.9999995, 1.9999998),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAACAAEAAwAEAAEABQAAAAIAAwAAAAUABAAGAAIABQACAAYAAwAHAAQAAwAFAAcABwAGAAQABwAFAAYA"),
+"name": "Bed",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAAP//AAAAAP//AAAAAAAA/////wAAAAAAAAAAAAD/////AAAAAP//AAD//wAA////////AAD//wAAAAAAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_2pa1c"]
+resource_name = "Puzzle_Books_Cube_007"
+_surfaces = [{
+"aabb": AABB(3.0861216, -9.262255, -1.0000001, 2, 2, 1.9999998),
+"attribute_data": PackedByteArray("/1////+f/7//n////1//v/9f/7//n/9//5//v/9f/3//X/9//5//P/+f/3//X/8//1//P/+fAAD/n/8//18AAP8f/3//X/8//1//f/8f/z//n/9//9//P//f/3//n/8/"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA"),
+"material": SubResource("StandardMaterial3D_vb7sh"),
+"name": "Den_Walls",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("AAAAAP//VNUAAP//AABU1QAA/////1TVAAAAAAAAVNUAAAAAAAD///////8AAP//AAD//wAA/////wAAAAD/////AAAAAFTV////////VNX/////AABU1f//AAD//1TV//8AAP///78AAP//////v/////////+/AAAAAP///78AAAAAAAD/v///AAD///+///8AAAAA/78AAAAA////v/////8AAP//AAD///////8AAP//AAD/////////////VNVU1VTVVNVU1VTVVNVU1f+//7//v/+//7//v/+//7+qKqoqqiqqKqoqqiqqKqoq/////////////////////wAA/38AAP9/AAD/fwAA/3//f/+//3//v/9//7//f/+/")
+}, {
+"aabb": AABB(23.992237, -0.93190193, -1.0000321, 2.5495987, 2.0482836, 1.9999998),
+"attribute_data": PackedByteArray("/1////+f/7//n////1//v/9f/7//n/9//5//v/9f/3//X/9//5//P/+f/3//X/8//1//P/+fAAD/n/8//18AAP8f/3//X/8//1//f/8f/z//n/9//9//P//f/3//n/8/"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA"),
+"material": SubResource("StandardMaterial3D_1tibm"),
+"name": "purplebook",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("+DcAAP//A9wAAPv4AAAD3AAA+/j//wPc+DcAAAAAA9z4NwAAAAD//wbI//8AAP//AAD7+AAA/////wMHAAD/////AwcAAAPcBsj/////A9wGyP//AAAD3P//Awf//wPc//8DB///HMsAAPv4//8cywbI/////xzL+DcAAP//Hcv4NwAAAAABwP//Awf//wHA//8DBwAAAcD4NwAA//8BwAbI//8AAC//AAD7+P//L/8AAPv4AAAv/wbI/////y//mNHM3JjRzNyY0czcmNHM3Da3yMg2t8jINrfIyDa3yMhmLjIjZi4yI2YuMiNmLjIj/////////////////////8EBfHzBAXx8wQF8fMEBfHwaf4y/Gn+Mvxp/jL8af4y/")
+}, {
+"aabb": AABB(6.793991, -0.9943247, -1.0000639, 2, 2, 1.9999998),
+"attribute_data": PackedByteArray("/1////+f/7//n////1//v/9f/7//n/9//5//v/9f/3//X/9//5//P/+f/3//X/8//1//P/+fAAD/n/8//18AAP8f/3//X/8//1//f/8f/z//n/9//9//P//f/3//n/8/"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA"),
+"material": SubResource("StandardMaterial3D_88f1h"),
+"name": "BlueBook",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("AAAAAP//VNUAAP//AABU1QAA/////1TVAAAAAAAAVNUAAAAAAAD///////8AAP//AAD//wAA/////wAAAAD/////AAAAAFTV////////VNX/////AABU1f//AAD//1TV//8AAP///78AAP//////v/////////+/AAAAAP///78AAAAAAAD/v///AAD///+///8AAAAA/78AAAAA////v/////8AAP//AAD///////8AAP//AAD/////////////VNVU1VTVVNVU1VTVVNVU1f+//7//v/+//7//v/+//7+qKqoqqiqqKqoqqiqqKqoq/////////////////////wAA/38AAP9/AAD/fwAA/3//f/+//3//v/9//7//f/+/")
+}, {
+"aabb": AABB(17.248932, -5.055263, -1.0000325, 2, 2, 1.9999998),
+"attribute_data": PackedByteArray("/1////+f/7//n////1//v/9f/7//n/9//5//v/9f/3//X/9//5//P/+f/3//X/8//1//P/+fAAD/n/8//18AAP8f/3//X/8//1//f/8f/z//n/9//9//P//f/3//n/8/"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA"),
+"material": SubResource("StandardMaterial3D_ptqk3"),
+"name": "Chandelier",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("AAAAAP//VNUAAP//AABU1QAA/////1TVAAAAAAAAVNUAAAAAAAD///////8AAP//AAD//wAA/////wAAAAD/////AAAAAFTV////////VNX/////AABU1f//AAD//1TV//8AAP///78AAP//////v/////////+/AAAAAP///78AAAAAAAD/v///AAD///+///8AAAAA/78AAAAA////v/////8AAP//AAD///////8AAP//AAD/////////////VNVU1VTVVNVU1VTVVNVU1f+//7//v/+//7//v/+//7+qKqoqqiqqKqoqqiqqKqoq/////////////////////wAA/38AAP9/AAD/fwAA/3//f/+//3//v/9//7//f/+/")
+}, {
+"aabb": AABB(24.353302, -9.167002, -1.0000008, 2, 1.9999995, 1.9999998),
+"attribute_data": PackedByteArray("/1////+f/7//n////1//v/9f/7//n/9//5//v/9f/3//X/9//5//P/+f/3//X/8//1//P/+fAAD/n/8//18AAP8f/3//X/8//1//f/8f/z//n/9//9//P//f/3//n/8/"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA"),
+"material": SubResource("StandardMaterial3D_x26cg"),
+"name": "Bed",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("AAAAAP//VNUAAP//AABU1QAA/////1TVAAAAAAAAVNUAAAAAAAD///////8AAP//AAD//wAA/////wAAAAD/////AAAAAFTV////////VNX/////AABU1f//AAD//1TV//8AAP///78AAP//////v/////////+/AAAAAP///78AAAAAAAD/v///AAD///+///8AAAAA/78AAAAA////v/////8AAP//AAD///////8AAP//AAD/////////////VNVU1VTVVNVU1VTVVNVU1f+//7//v/+//7//v/+//7+qKqoqqiqqKqoqqiqqKqoq/////////////////////wAA/38AAP9/AAD/fwAA/3//f/+//3//v/9//7//f/+/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_w8hpv")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_1g0ex"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[node name="Puzzle_Books" type="Node3D" unique_id=646691581]
+script = ExtResource("1_2pa1c")
+
+[node name="Puzzle_Books2" type="MeshInstance3D" parent="." unique_id=1220653054]
+transform = Transform3D(0.1215355, 0, 0, 0, 0.38303968, -5.9360455e-06, 0, 5.9360455e-06, 0.38303968, -1.92543, 1.8753138, -1.9334265)
+mesh = SubResource("ArrayMesh_2pa1c")
+
+[node name="Book_Green" type="StaticBody3D" parent="." unique_id=777788776 node_paths=PackedStringArray("puzzle_manager") groups=["Puzzle_Book"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2231126, -0.72723854, -2.0473094)
+script = ExtResource("3_tivom")
+book_color = "green"
+puzzle_manager = NodePath("..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Book_Green" unique_id=1878481880 groups=["Puzzle_Book"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.17536557, -0.5901097, 0)
+shape = SubResource("ConcavePolygonShape3D_1g0ex")
+
+[node name="Book_Blue" type="StaticBody3D" parent="." unique_id=1510459808 node_paths=PackedStringArray("puzzle_manager") groups=["Puzzle_Book"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9502536, 2.4805558, -2.0473094)
+script = ExtResource("3_tivom")
+book_color = "blue"
+puzzle_manager = NodePath("..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Book_Blue" unique_id=596236138 groups=["Puzzle_Book"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.60725087, 0)
+shape = SubResource("ConcavePolygonShape3D_1g0ex")
+
+[node name="Book_Red" type="StaticBody3D" parent="." unique_id=1368289886 node_paths=PackedStringArray("puzzle_manager") groups=["Puzzle_Book"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1660814, -0.6636572, -2.0473094)
+script = ExtResource("3_tivom")
+book_color = "red"
+puzzle_manager = NodePath("..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Book_Red" unique_id=1079364841 groups=["Puzzle_Book"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.59987783, 0)
+shape = SubResource("ConcavePolygonShape3D_1g0ex")
+
+[node name="Book_Purple" type="StaticBody3D" parent="." unique_id=1992397368 node_paths=PackedStringArray("puzzle_manager") groups=["Puzzle_Book"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.910766, 1.4893253, -2.8154597)
+script = ExtResource("3_tivom")
+book_color = "purple"
+puzzle_manager = NodePath("..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Book_Purple" unique_id=2021777538 groups=["Puzzle_Book"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.30556628, 0.49887592, 0.7541418)
+shape = SubResource("ConcavePolygonShape3D_1g0ex")
+
+[node name="Book_Yellow" type="StaticBody3D" parent="." unique_id=1749308574 node_paths=PackedStringArray("puzzle_manager") groups=["Puzzle_Book"]]
+script = ExtResource("3_tivom")
+book_color = "yellow"
+puzzle_manager = NodePath("..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Book_Yellow" unique_id=1656988119 groups=["Puzzle_Book"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.26349086, 0.37443745, -2.0304332)
+shape = SubResource("ConcavePolygonShape3D_1g0ex")
