@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dd1ab01vensg1"]
+
+[ext_resource type="PackedScene" uid="uid://dr46esr2fse6m" path="res://Models/NPCs/Woman.glb" id="1_amy13"]
+
+[node name="Woman2" unique_id=468122675 instance=ExtResource("1_amy13")]
+
+[node name="Skeleton3D" parent="Woman_001" parent_id_path=PackedInt32Array(641350914) index="0" unique_id=669819826]
+bones/2/position = Vector3(0.5949625, 1.2206273, -0.0032476143)
+bones/2/rotation = Quaternion(-0.009725091, 8.374786e-05, -0.9998448, 0.014694037)
+bones/3/rotation = Quaternion(0.0052080317, -0.039529376, 0.122898154, 0.99161804)
+bones/4/position = Vector3(-0.60518295, 1.2336092, -0.0005502312)
+bones/4/rotation = Quaternion(-0.013597448, 0.02262123, 0.9995332, 0.015389624)
+bones/5/rotation = Quaternion(-0.0015620611, 0.032352734, -0.12703115, 0.9913698)
+bones/6/rotation = Quaternion(0.002490908, 0.020880416, 0.9997635, -0.0055634202)
+bones/7/position = Vector3(-6.764769e-05, 0.5279791, 0.00047138694)
+bones/7/rotation = Quaternion(-0.01248535, 0.002631708, -0.0053417822, 0.99990433)
+bones/8/rotation = Quaternion(0.0043422105, 0.008513379, 0.9999334, -0.006483984)
+bones/9/rotation = Quaternion(0.0033485463, 0.005284415, -0.0070076133, 0.9999559)
