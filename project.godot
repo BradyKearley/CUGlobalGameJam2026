@@ -15,6 +15,12 @@ run/main_scene="uid://d0s2o2tx86s6l"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[display]
+
+window/size/mode=3
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+
 [global_group]
 
 Puzzle_Book=""
@@ -54,3 +60,6 @@ Interact={
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+anti_aliasing/quality/msaa_2d=1
+anti_aliasing/quality/msaa_3d=3
+anti_aliasing/quality/screen_space_aa=1

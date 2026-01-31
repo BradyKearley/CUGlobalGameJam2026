@@ -1,5 +1,184 @@
 [gd_scene format=3 uid="uid://w5gpp1crt1ya"]
 
 [ext_resource type="PackedScene" uid="uid://cex26k63f341j" path="res://Models/Manor2.0/Manor2.0.glb" id="1_8480v"]
+[ext_resource type="PackedScene" uid="uid://cw31esap3kng7" path="res://Tscn/Player/player.tscn" id="2_drulf"]
 
 [node name="Manor2_0" unique_id=1119379920 instance=ExtResource("1_8480v")]
+
+[node name="Lamp" parent="." index="4" unique_id=1829520901]
+layers = 2
+
+[node name="Lamp_001" parent="." index="5" unique_id=1536720978]
+layers = 2
+
+[node name="Lamp_002" parent="." index="6" unique_id=239809196]
+layers = 2
+
+[node name="Ballroom_Chandelier1" parent="." index="7" unique_id=239157886]
+layers = 2
+
+[node name="Ballroom_Chandelier2" parent="." index="8" unique_id=1308149487]
+layers = 2
+
+[node name="Bedroom_Chandelier" parent="." index="9" unique_id=1213198418]
+layers = 2
+
+[node name="Lamp_003" parent="." index="42" unique_id=587431925]
+layers = 2
+
+[node name="Ballroom_Chandelier2_001" parent="." index="43" unique_id=1283496436]
+layers = 2
+
+[node name="Ballroom_Chandelier2_002" parent="." index="44" unique_id=846934090]
+layers = 2
+
+[node name="Ballroom_Chandelier2_003" parent="." index="45" unique_id=195833914]
+layers = 2
+
+[node name="Ballroom_Chandelier2_004" parent="." index="46" unique_id=1213699092]
+layers = 2
+
+[node name="Ballroom_Chandelier2_005" parent="." index="47" unique_id=1221762303]
+layers = 2
+
+[node name="Ballroom_Chandelier2_006" parent="." index="48" unique_id=146270328]
+layers = 2
+
+[node name="Ballroom_Chandelier2_007" parent="." index="75" unique_id=260116684]
+layers = 2
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." index="84" unique_id=2056381795]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5379114, 6.456622, -12.01098)
+light_color = Color(0.99983746, 0.9999979, 0.7832713, 1)
+shadow_enabled = true
+shadow_caster_mask = 4294967293
+omni_range = 20.0
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="." index="85" unique_id=730933077]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.282932, 6.456622, -10.826301)
+light_color = Color(0.99983746, 0.9999979, 0.7832713, 1)
+shadow_enabled = true
+shadow_caster_mask = 4294967293
+omni_range = 20.0
+
+[node name="OmniLight3D7" type="OmniLight3D" parent="." index="86" unique_id=1359068519]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.50301, 6.456622, -44.531178)
+light_color = Color(0.99983746, 0.9999979, 0.7832713, 1)
+shadow_enabled = true
+shadow_caster_mask = 4294967293
+omni_range = 20.0
+
+[node name="OmniLight3D15" type="OmniLight3D" parent="." index="87" unique_id=967428118]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.47979, 6.456622, -28.528448)
+light_color = Color(0.99983746, 0.9999979, 0.7832713, 1)
+shadow_enabled = true
+shadow_caster_mask = 4294967293
+omni_range = 20.0
+
+[node name="OmniLight3D9" type="OmniLight3D" parent="." index="88" unique_id=1177819324]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5634546, 6.456622, -40.91927)
+light_color = Color(0.99983746, 0.9999979, 0.7832713, 1)
+shadow_enabled = true
+shadow_caster_mask = 4294967293
+omni_range = 20.0
+
+[node name="OmniLight3D10" type="OmniLight3D" parent="." index="89" unique_id=1317464321]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8582988, 6.456622, -26.244434)
+light_color = Color(0.99983746, 0.9999979, 0.7832713, 1)
+shadow_enabled = true
+shadow_caster_mask = 4294967293
+omni_range = 20.0
+
+[node name="OmniLight3D11" type="OmniLight3D" parent="." index="90" unique_id=1711795103]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8582988, 6.456622, -10.790534)
+light_color = Color(0.99983746, 0.9999979, 0.7832713, 1)
+shadow_enabled = true
+shadow_caster_mask = 4294967293
+omni_range = 20.0
+
+[node name="OmniLight3D8" type="OmniLight3D" parent="." index="91" unique_id=1832840552]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.134968, 2.572024, -46.74745)
+light_color = Color(0.9917776, 0.37265038, 0, 1)
+shadow_enabled = true
+shadow_caster_mask = 4294967293
+omni_range = 7.517
+
+[node name="OmniLight3D12" type="OmniLight3D" parent="." index="92" unique_id=2129756239]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.247425, 2.572024, -30.167336)
+light_color = Color(0.9917776, 0.37265038, 0, 1)
+shadow_enabled = true
+shadow_caster_mask = 4294967293
+omni_range = 7.517
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="." index="93" unique_id=715753214]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5379114, 6.5272436, -22.0356)
+light_color = Color(0.99983746, 0.9999979, 0.7832713, 1)
+shadow_enabled = true
+shadow_caster_mask = 4294967293
+omni_range = 20.0
+
+[node name="OmniLight3D13" type="OmniLight3D" parent="." index="94" unique_id=1757004648]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.90267, 5.6190968, -46.80269)
+light_color = Color(0.99983746, 0.9999979, 0.7832713, 1)
+shadow_enabled = true
+shadow_caster_mask = 4294967293
+omni_range = 20.0
+
+[node name="OmniLight3D14" type="OmniLight3D" parent="." index="95" unique_id=1294777848]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.187592, 5.6190968, -21.298458)
+light_color = Color(0.99983746, 0.9999979, 0.7832713, 1)
+shadow_enabled = true
+shadow_caster_mask = 4294967293
+omni_range = 20.0
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="." index="96" unique_id=1274510681]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.896679, 6.5272436, -28.48272)
+light_color = Color(0.99983746, 0.9999979, 0.7832713, 1)
+shadow_enabled = true
+shadow_caster_mask = 4294967293
+omni_range = 20.0
+
+[node name="OmniLight3D6" type="OmniLight3D" parent="." index="97" unique_id=195322313]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.404102, 6.129182, -13.50965)
+light_color = Color(0.99983746, 0.9999979, 0.7832713, 1)
+shadow_enabled = true
+shadow_caster_mask = 4294967293
+omni_range = 20.0
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="." index="98" unique_id=1315032202]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.171669, 6.5272436, -25.97392)
+light_color = Color(0.99983746, 0.9999979, 0.7832713, 1)
+shadow_enabled = true
+shadow_caster_mask = 4294967293
+omni_range = 20.0
+
+[node name="Player" parent="." index="99" unique_id=207691121 instance=ExtResource("2_drulf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.2874074, 1.5039704, -5.995969)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." index="100" unique_id=442807445]
+transform = Transform3D(1, 0, 0, 0, -0.081590615, 0.99666595, 0, -0.99666595, -0.081590615, 36.65283, 8.915504, -13.672579)
+light_color = Color(1, 1, 0.78431374, 1)
+light_energy = 30.0
+spot_range = 3.965
+spot_angle = 22.68
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="." index="101" unique_id=937645397]
+transform = Transform3D(1, 0, 0, 0, -0.081590615, 0.99666595, 0, -0.99666595, -0.081590615, 30.436022, 8.89015, -52.516216)
+light_color = Color(1, 1, 0.78431374, 1)
+light_energy = 30.0
+spot_range = 3.965
+spot_angle = 22.68
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="." index="102" unique_id=846103679]
+transform = Transform3D(1, 0, 0, 0, -0.081590615, 0.99666595, 0, -0.99666595, -0.081590615, -29.447653, 8.89015, -21.608068)
+light_color = Color(1, 1, 0.78431374, 1)
+light_energy = 30.0
+spot_range = 3.965
+spot_angle = 22.68
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="." index="103" unique_id=824009086]
+transform = Transform3D(1, 0, 0, 0, -0.081590615, 0.99666595, 0, -0.99666595, -0.081590615, -10.241882, 8.7991905, -46.522247)
+light_color = Color(1, 1, 0.78431374, 1)
+light_energy = 30.0
+spot_range = 3.965
+spot_angle = 22.68
