@@ -1,49 +1,50 @@
 [gd_scene format=3 uid="uid://w5gpp1crt1ya"]
 
 [ext_resource type="PackedScene" uid="uid://cex26k63f341j" path="res://Models/Manor2.0/Manor2.0.glb" id="1_8480v"]
+[ext_resource type="PackedScene" uid="uid://ckywadyto5rc" path="res://bar.tscn" id="2_drulf"]
 
 [node name="Manor2_0" unique_id=1119379920 instance=ExtResource("1_8480v")]
 
-[node name="Lamp" parent="." index="4" unique_id=1829520901]
+[node name="Lamp" parent="." index="4" unique_id=185645595]
 layers = 2
 
-[node name="Lamp_001" parent="." index="5" unique_id=1536720978]
+[node name="Lamp_001" parent="." index="5" unique_id=491028380]
 layers = 2
 
-[node name="Lamp_002" parent="." index="6" unique_id=239809196]
+[node name="Lamp_002" parent="." index="6" unique_id=1959368717]
 layers = 2
 
-[node name="Ballroom_Chandelier1" parent="." index="7" unique_id=239157886]
+[node name="Ballroom_Chandelier1" parent="." index="7" unique_id=1524260973]
 layers = 2
 
-[node name="Ballroom_Chandelier2" parent="." index="8" unique_id=1308149487]
+[node name="Ballroom_Chandelier2" parent="." index="8" unique_id=1309914635]
 layers = 2
 
-[node name="Bedroom_Chandelier" parent="." index="9" unique_id=1213198418]
+[node name="Bedroom_Chandelier" parent="." index="9" unique_id=1377320555]
 layers = 2
 
-[node name="Lamp_003" parent="." index="42" unique_id=587431925]
+[node name="Lamp_003" parent="." index="42" unique_id=997622872]
 layers = 2
 
-[node name="Ballroom_Chandelier2_001" parent="." index="43" unique_id=1283496436]
+[node name="Ballroom_Chandelier2_001" parent="." index="43" unique_id=1388150392]
 layers = 2
 
-[node name="Ballroom_Chandelier2_002" parent="." index="44" unique_id=846934090]
+[node name="Ballroom_Chandelier2_002" parent="." index="44" unique_id=965083488]
 layers = 2
 
-[node name="Ballroom_Chandelier2_003" parent="." index="45" unique_id=195833914]
+[node name="Ballroom_Chandelier2_003" parent="." index="45" unique_id=1286714713]
 layers = 2
 
-[node name="Ballroom_Chandelier2_004" parent="." index="46" unique_id=1213699092]
+[node name="Ballroom_Chandelier2_004" parent="." index="46" unique_id=1842361009]
 layers = 2
 
-[node name="Ballroom_Chandelier2_005" parent="." index="47" unique_id=1221762303]
+[node name="Ballroom_Chandelier2_005" parent="." index="47" unique_id=1908623658]
 layers = 2
 
-[node name="Ballroom_Chandelier2_006" parent="." index="48" unique_id=146270328]
+[node name="Ballroom_Chandelier2_006" parent="." index="48" unique_id=1464799253]
 layers = 2
 
-[node name="Ballroom_Chandelier2_007" parent="." index="75" unique_id=260116684]
+[node name="Ballroom_Chandelier2_007" parent="." index="75" unique_id=755940995]
 layers = 2
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." index="84" unique_id=2056381795]
@@ -178,3 +179,6 @@ light_color = Color(1, 1, 0.78431374, 1)
 light_energy = 30.0
 spot_range = 3.965
 spot_angle = 22.68
+
+[node name="Bar" parent="." index="103" unique_id=361011956 instance=ExtResource("2_drulf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.585577, 0.59363604, -41.10545)
