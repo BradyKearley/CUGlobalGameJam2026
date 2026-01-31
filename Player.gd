@@ -8,8 +8,11 @@ extends CharacterBody3D
 
 const noteUi: PackedScene = preload("res://Tscn/Ui/note_ui.tscn")
 const combinationLockUi: PackedScene = preload("res://combination_lock.tscn")
+const interactUi: PackedScene = preload("res://Tscn/Ui/interact_popup.tscn")
 var noteUiPresent = false
 var lockUiPresent = false
+var interactPopupPresent = false
+var currentInteractPopup = null
 func _ready():
 	# Capture the mouse cursor
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -60,28 +63,57 @@ func _process(delta: float) -> void:
 	var query = PhysicsRayQueryParameters3D.create(from, to)
 	var result = space_state.intersect_ray(query)
 	
+	var lookingAtInteractable = false
+	
 	if result:
 		var collider = result.collider
-		if collider.is_in_group("Note") and Input.is_action_just_pressed("Interact") and not noteUiPresent:
-			var noteText = collider.get_parent().text
-			var note_ui_instance = noteUi.instantiate()
-			note_ui_instance.text = noteText
-			add_child(note_ui_instance)
-			# Connect the signal to reset mouse when note is closed
-			note_ui_instance.note_closed.connect(resetMouse)
-			noteUiPresent = true
-			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		if collider.is_in_group("Voice") and Input.is_action_just_pressed("Interact"):
-			collider.get_parent().playVoice()
-		if collider.is_in_group("CodeLock") and Input.is_action_just_pressed("Interact") and not lockUiPresent:
-			var lock_ui_instance = combinationLockUi.instantiate()
-			lock_ui_instance.correct_combination = collider.get_parent().code
-			add_child(lock_ui_instance)
-			# Connect the signals to handle lock events
-			lock_ui_instance.lock_closed.connect(resetMouseFromLock)
-			lock_ui_instance.lock_opened.connect(onLockOpened)
-			lockUiPresent = true
-			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		if collider.is_in_group("Note") or collider.is_in_group("Voice") or collider.is_in_group("CodeLock"):
+			lookingAtInteractable = true
+			
+			# Show interact popup if not already shown and no other UI is open
+			if not interactPopupPresent and not noteUiPresent and not lockUiPresent:
+				showInteractPopup()
+			
+			# Handle interactions
+			if Input.is_action_just_pressed("Interact"):
+				if collider.is_in_group("Note") and not noteUiPresent:
+					hideInteractPopup()
+					var noteText = collider.get_parent().text
+					var note_ui_instance = noteUi.instantiate()
+					note_ui_instance.text = noteText
+					add_child(note_ui_instance)
+					# Connect the signal to reset mouse when note is closed
+					note_ui_instance.note_closed.connect(resetMouse)
+					noteUiPresent = true
+					Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+				elif collider.is_in_group("Voice"):
+					collider.get_parent().playVoice()
+				elif collider.is_in_group("CodeLock") and not lockUiPresent:
+					hideInteractPopup()
+					var lock_ui_instance = combinationLockUi.instantiate()
+					lock_ui_instance.correct_combination = collider.get_parent().code
+					add_child(lock_ui_instance)
+					# Connect the signals to handle lock events
+					lock_ui_instance.lock_closed.connect(resetMouseFromLock)
+					lock_ui_instance.lock_opened.connect(onLockOpened)
+					lockUiPresent = true
+					Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	
+	# Hide interact popup if not looking at anything interactable
+	if not lookingAtInteractable and interactPopupPresent:
+		hideInteractPopup()
+
+func showInteractPopup():
+	if not interactPopupPresent:
+		currentInteractPopup = interactUi.instantiate()
+		add_child(currentInteractPopup)
+		interactPopupPresent = true
+
+func hideInteractPopup():
+	if interactPopupPresent and currentInteractPopup:
+		currentInteractPopup.queue_free()
+		currentInteractPopup = null
+		interactPopupPresent = false
 func resetMouse():
 	noteUiPresent = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
