@@ -15,6 +15,10 @@ run/main_scene="uid://d0s2o2tx86s6l"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[global_group]
+
+Puzzle_Book=""
+
 [input]
 
 W={
