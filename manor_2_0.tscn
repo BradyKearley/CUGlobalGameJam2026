@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://w5gpp1crt1ya"]
+
+[ext_resource type="PackedScene" uid="uid://cex26k63f341j" path="res://Models/Manor2.0/Manor2.0.glb" id="1_8480v"]
+
+[node name="Manor2_0" unique_id=1119379920 instance=ExtResource("1_8480v")]
