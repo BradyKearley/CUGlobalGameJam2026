@@ -1477,3 +1477,7 @@ transform = Transform3D(-2.9505188e-08, 0, -0.675, 0, 0.675, 0, 0.675, 0, -2.950
 
 [node name="Statues" parent="." unique_id=920813482 instance=ExtResource("31_onx7j")]
 transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, 0.26733983, 1.811543, -25.02206)
+
+[node name="Note2" parent="." unique_id=270013705 instance=ExtResource("16_an1vu")]
+transform = Transform3D(0.404, 0, 0, 0, 0.038, 0, 0, 0, 0.711, 6.8845024, 2.677536, -44.461155)
+text = "Three ladies whisper at the bar.Two speak plainly, and one hides a secret.If you trust the other two, the false tongue will reveal itself.Watch carefully, and the mask will tell you the truth."
