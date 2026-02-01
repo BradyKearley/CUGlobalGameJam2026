@@ -27,6 +27,7 @@ func _on_game_loop_timer_timeout() -> void:
 	var tween = create_tween()
 	tween.tween_property(color_rect, "modulate:a", 1.0, .1) # Fade to opaque over 0.5 seconds
 	$DeathTimer.start()
+	$AudioStreamPlayer.play()
 	
 
 func _on_death_timer_timeout() -> void:
