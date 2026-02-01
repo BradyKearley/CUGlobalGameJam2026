@@ -1039,7 +1039,7 @@ mesh = SubResource("ArrayMesh_wt57k")
 [node name="Manor2_0" parent="." unique_id=1119379920 instance=ExtResource("1_yx7mw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0030534267, 0.058179855, 0.011896133)
 
-[node name="Player" parent="." unique_id=207691121 instance=ExtResource("2_ykeeq")]
+[node name="Player" parent="." unique_id=207691121 groups=["Player"] instance=ExtResource("2_ykeeq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.7895775, 1.1707963, -4.5691004)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1680402485]

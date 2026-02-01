@@ -16,6 +16,12 @@ func _disable_color_rect_mouse_input():
 	print("GameManager: ColorRect mouse input disabled")
 
 func _on_game_loop_timer_timeout() -> void:
+	# Check if player has the winning mask
+	var player = get_tree().get_first_node_in_group("Player")
+	if player and player.mask == "Win":
+		print("Player has winning mask - game won!")
+		return
+	
 	# Fade in ColorRect when game loop finishes
 	var tween = create_tween()
 	tween.tween_property(color_rect, "modulate:a", 1.0, .1) # Fade to opaque over 0.5 seconds

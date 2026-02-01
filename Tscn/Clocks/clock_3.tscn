@@ -281,7 +281,7 @@ mesh = SubResource("BoxMesh_sda7n")
 [node name="ClockSound" type="AudioStreamPlayer3D" parent="HourHand" unique_id=707760247]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.006, 0, 0)
 stream = ExtResource("3_7c6dl")
-max_distance = 25.0
+max_distance = 35.0
 
 [node name="Timer" type="Timer" parent="HourHand" unique_id=2083190963]
 wait_time = 89.0

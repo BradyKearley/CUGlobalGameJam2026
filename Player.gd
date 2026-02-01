@@ -21,6 +21,8 @@ var interactPopupPresent = false
 var currentInteractPopup = null
 var heldDrink = "None"
 var currentLock = null
+var mask = "Bad"
+var currentHiddenMask = null
 
 func _ready():
 	music.play()
@@ -84,7 +86,7 @@ func _process(delta: float) -> void:
 	
 	if result:
 		var collider = result.collider
-		if collider.is_in_group("Note") or collider.is_in_group("Voice") or collider.is_in_group("CodeLock") or collider.is_in_group("Bartender") or collider.is_in_group("Puzzle_Book"):
+		if collider.is_in_group("Note") or collider.is_in_group("Voice") or collider.is_in_group("CodeLock") or collider.is_in_group("Bartender") or collider.is_in_group("Puzzle_Book") or collider.is_in_group("Bad") or collider.is_in_group("Win"):
 			lookingAtInteractable = true
 			
 			# Show interact popup if not already shown and no other UI is open
@@ -124,6 +126,24 @@ func _process(delta: float) -> void:
 					lock_ui_instance.lock_opened.connect(onLockOpened)
 					lockUiPresent = true
 					Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+				elif collider.is_in_group("Bad"):
+					hideInteractPopup()
+					# Show previously hidden mask if there is one
+					if currentHiddenMask:
+						currentHiddenMask.show()
+					# Hide the new mask and track it
+					currentHiddenMask = collider.get_parent()
+					currentHiddenMask.hide()
+					mask = "Bad"
+				elif collider.is_in_group("Win"):
+					hideInteractPopup()
+					# Show previously hidden mask if there is one
+					if currentHiddenMask:
+						currentHiddenMask.show()
+					# Hide the new mask and track it
+					currentHiddenMask = collider.get_parent()
+					currentHiddenMask.hide()
+					mask = "Win"
 				elif collider.is_in_group("Bartender") and not bartenderUiPresent:
 					if heldDrink == "None":
 						hideInteractPopup()
