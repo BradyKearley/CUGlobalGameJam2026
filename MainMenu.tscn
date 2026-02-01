@@ -45,6 +45,14 @@ grow_vertical = 2
 text = "Start Game
 "
 
+[node name="Button2" type="Button" parent="Panel" unique_id=885383678]
+layout_mode = 0
+offset_left = 301.0
+offset_top = 180.0
+offset_right = 573.0
+offset_bottom = 211.0
+text = "QUIT THIS BITCH CAUSE IT SUCLKS"
+
 [node name="Label" type="Label" parent="." unique_id=901121971]
 layout_mode = 1
 anchors_preset = 5
@@ -60,3 +68,4 @@ theme_override_font_sizes/font_size = 54
 text = "Mask of Deception"
 
 [connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Panel/Button2" to="." method="_on_button_2_pressed"]
