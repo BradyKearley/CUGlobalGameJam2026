@@ -19,18 +19,17 @@ var puzzle_solved = false
 func press_book(color: String):
 	if puzzle_solved:
 		return
+	
+	solved.play()
 
 	current_order.append(color)
 
 	# Check correctness so far
 	for i in range(current_order.size()):
 		if current_order[i] != correct_order[i]:
-			incorrect.play()
 			reset_puzzle()
 			return
 
-	# If we get here, the input so far is correct
-	correct.play()
 
 	# Full solution entered
 	if current_order.size() == correct_order.size():
@@ -41,8 +40,7 @@ func reset_puzzle():
 	print("Wrong order! Resetting.")
 
 func solve_puzzle():
-	correct.stop()
-	solved.play()
+	correct.play()
 	green.queue_free()
 	blue.queue_free()
 	red.queue_free()
