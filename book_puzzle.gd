@@ -8,6 +8,7 @@ var puzzle_solved = false
 @onready var correct = $Correct
 @onready var incorrect = $Incorrect
 @onready var solved = $Solved
+
 @onready var green = $Book_Green
 @onready var blue = $Book_Blue
 @onready var red = $Book_Red

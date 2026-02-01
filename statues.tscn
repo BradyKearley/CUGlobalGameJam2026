@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" uid="uid://bmd4bhvukyrw6" path="res://Statue_Puzzle.gd" id="1_jujl0"]
 [ext_resource type="Script" uid="uid://wpy8l105gg35" path="res://statue.gd" id="2_54fvj"]
+[ext_resource type="AudioStream" uid="uid://cssjhdq4rb84c" path="res://SFX/correct.wav" id="3_0vxm0"]
+[ext_resource type="AudioStream" uid="uid://bd87haf1xafwu" path="res://SFX/Violin.wav" id="4_rovtn"]
+[ext_resource type="AudioStream" uid="uid://bxmnuhdslu3hr" path="res://SFX/wrong.wav" id="5_0as6y"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a7g7q"]
 resource_name = "Stone"
@@ -191,18 +194,18 @@ shadow_mesh = SubResource("ArrayMesh_i4635")
 [node name="Statues" type="Node3D" unique_id=920813482]
 script = ExtResource("1_jujl0")
 
-[node name="Bard_State" type="MeshInstance3D" parent="." unique_id=1511878663 groups=["statue"]]
+[node name="Bard_Statue" type="MeshInstance3D" parent="." unique_id=1511878663 groups=["statue"]]
 transform = Transform3D(0.48009554, 0, -2.6403618e-06, 0, 0.48009554, 0, 2.6403618e-06, 0, 0.48009554, 2.1104465, 1.6855807, 0.70945543)
 mesh = SubResource("ArrayMesh_3tm8y")
 
-[node name="Bard" type="StaticBody3D" parent="Bard_State" unique_id=874952149 node_paths=PackedStringArray("puzzle_manager") groups=["statue"]]
-transform = Transform3D(3.9999998, 0, -5.456968e-12, 0, 3.9999998, 0, 5.456968e-12, 0, 3.9999998, -3.8978775, -0.7272384, -0.40812826)
+[node name="Bard" type="StaticBody3D" parent="Bard_Statue" unique_id=1587207462 node_paths=PackedStringArray("puzzle_manager") groups=["statue"]]
+transform = Transform3D(3.9999998, 0, -1.0913936e-11, 0, 3.9999998, 0, 1.0913936e-11, 0, 3.9999998, 0.16530848, -0.75410104, -0.5259082)
 script = ExtResource("2_54fvj")
 statue = "bard"
 puzzle_manager = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Bard_State/Bard" unique_id=499729045 groups=["statue"]]
-transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, -0.17536558, -0.53910446, 0)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Bard_Statue/Bard" unique_id=473167048 groups=["statue"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.60725087, 0)
 shape = SubResource("ConcavePolygonShape3D_ohepx")
 
 [node name="King_Statue" type="MeshInstance3D" parent="." unique_id=530940141 groups=["statue"]]
@@ -223,12 +226,22 @@ shape = SubResource("ConcavePolygonShape3D_ohepx")
 transform = Transform3D(0.48009554, 0, -2.6403618e-06, 0, 0.48009554, 0, 2.6403618e-06, 0, 0.48009554, -0.18486047, 1.6855805, 0.70945555)
 mesh = SubResource("ArrayMesh_11wfe")
 
-[node name="Knight" type="StaticBody3D" parent="Knight_Statue" unique_id=1587207462 node_paths=PackedStringArray("puzzle_manager") groups=["statue"]]
-transform = Transform3D(4, 0, -8.731152e-12, 0, 4, 0, 8.731152e-12, 0, 4, 4.946246, -0.7541008, -0.5259348)
+[node name="Knight" type="StaticBody3D" parent="Knight_Statue" unique_id=874952149 node_paths=PackedStringArray("puzzle_manager") groups=["statue"]]
+transform = Transform3D(3.9999995, 0, -5.456968e-12, 0, 3.9999995, 0, 5.456968e-12, 0, 3.9999995, 0.88306046, -0.72723794, -0.40815485)
 script = ExtResource("2_54fvj")
 statue = "knight"
 puzzle_manager = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Knight_Statue/Knight" unique_id=473167048 groups=["statue"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.60725087, 0)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Knight_Statue/Knight" unique_id=499729045 groups=["statue"]]
+transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, -0.17536558, -0.53910446, 0)
 shape = SubResource("ConcavePolygonShape3D_ohepx")
+
+[node name="Correct" type="AudioStreamPlayer" parent="." unique_id=1112625513]
+stream = ExtResource("3_0vxm0")
+
+[node name="Solved" type="AudioStreamPlayer" parent="." unique_id=1464736614]
+stream = ExtResource("4_rovtn")
+
+[node name="Incorrect" type="AudioStreamPlayer" parent="." unique_id=445135866]
+stream = ExtResource("5_0as6y")
+volume_db = -10.0

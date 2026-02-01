@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://bmo3giy3e54hu"]
+
+[ext_resource type="FontFile" uid="uid://dyn2h8swbrum5" path="res://Font/Tangerine-Regular.ttf" id="1_5cpk5"]
+[ext_resource type="Script" uid="uid://btwmj0q4x4xh" path="res://Tscn/Player/note_ui.gd" id="1_p3lif"]
+[ext_resource type="FontFile" uid="uid://di2f32crtvulw" path="res://Font/Cameliya.ttf" id="2_p3lif"]
+[ext_resource type="Texture2D" uid="uid://bpv2iwyxblwse" path="res://Materials/Scrolled_Ancient_Paper_PNG_Clipart_Image.png" id="3_5hkex"]
+
+[node name="book_ui" type="Control" unique_id=1329364810]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_p3lif")
+
+[node name="Panel" type="Panel" parent="." unique_id=511392186]
+layout_mode = 0
+offset_left = 419.0
+offset_top = 159.0
+offset_right = 811.0
+offset_bottom = 515.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel" unique_id=120906210]
+clip_contents = false
+layout_mode = 0
+offset_right = 386.0
+offset_bottom = 353.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_5cpk5")
+theme_override_fonts/bold_font = ExtResource("2_p3lif")
+theme_override_font_sizes/normal_font_size = 28
+theme_override_font_sizes/bold_font_size = 16
+bbcode_enabled = true
+text = "The Story of The King, The Knight, and the Bard
+
+In a candlelit hall, a [b]knight[/b] argued with a [b]bard[/b] over a riddle while the [b]king[/b] listened, amused by the clamor. The [b]bard[/b] strummed a tune that teased the [b]knight[/b], and the [b]king[/b] laughed, urging peace as banners stirred. Later, a [b]knight[/b] taught patience to a squire, a minstrel traded jokes with merchants, and the warrior set aside pride to learn that stories can mend more than steel.
+"
+
+[node name="ScrolledAncientPaperPngClipartImage" type="Sprite2D" parent="Panel/RichTextLabel" unique_id=1383308380]
+show_behind_parent = true
+position = Vector2(195, 156)
+scale = Vector2(0.12, 0.116)
+texture = ExtResource("3_5hkex")
+
+[node name="Button" type="Button" parent="." unique_id=2145064549]
+layout_mode = 0
+offset_left = 769.0
+offset_top = 53.0
+offset_right = 819.0
+offset_bottom = 96.0
+text = "X"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

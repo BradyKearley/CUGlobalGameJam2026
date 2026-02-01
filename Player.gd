@@ -86,7 +86,11 @@ func _process(delta: float) -> void:
 	
 	if result:
 		var collider = result.collider
+<<<<<<< Updated upstream
 		if collider.is_in_group("Note") or collider.is_in_group("Voice") or collider.is_in_group("CodeLock") or collider.is_in_group("Bartender") or collider.is_in_group("Puzzle_Book") or collider.is_in_group("Bad") or collider.is_in_group("Win"):
+=======
+		if collider.is_in_group("Note") or collider.is_in_group("Voice") or collider.is_in_group("CodeLock") or collider.is_in_group("Bartender") or collider.is_in_group("Puzzle_Book") or collider.is_in_group("statue"):
+>>>>>>> Stashed changes
 			lookingAtInteractable = true
 			
 			# Show interact popup if not already shown and no other UI is open
@@ -157,7 +161,7 @@ func _process(delta: float) -> void:
 					else:
 						collider.get_parent().swapVoice()
 					collider.get_parent().playVoice()
-				elif collider.is_in_group("Puzzle_Book"):
+				elif collider.is_in_group("Puzzle_Book") or collider.is_in_group("statue"):
 					collider.interact()
 	
 	# Hide interact popup if not looking at anything interactable
