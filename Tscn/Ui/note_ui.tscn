@@ -6,7 +6,7 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_oflol"]
 font = ExtResource("2_6ulkk")
-font_size = 30
+font_size = 40
 font_color = Color(0, 0, 0, 1)
 
 [node name="NoteUI" type="Control" unique_id=524111183]
@@ -30,10 +30,7 @@ layout_mode = 0
 offset_top = -58.0
 offset_right = 381.0
 offset_bottom = 358.0
-text = "The King, The Knight, and The Bard:
-
-In a candlelit hall, a knight argued with a bard over a riddle while the king listened, amused by the clamor. The bard strummed a tune that teased the knight, and the king laughed, urging peace as banners stirred. Later, a knight taught patience to a squire, a minstrel traded jokes with merchants, and the warrior set aside pride to learn that stories mend more than steel.
-"
+text = "Example Text..."
 label_settings = SubResource("LabelSettings_oflol")
 horizontal_alignment = 1
 autowrap_mode = 2
