@@ -245,3 +245,9 @@ stream = ExtResource("4_rovtn")
 [node name="Incorrect" type="AudioStreamPlayer" parent="." unique_id=445135866]
 stream = ExtResource("5_0as6y")
 volume_db = -10.0
+
+[node name="StatueLight" type="SpotLight3D" parent="." unique_id=959092038]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10216975, 2.7840204, 1.2301366)
+visible = false
+light_color = Color(0.79556865, 0.90807253, 0.94099057, 1)
+light_energy = 2.0

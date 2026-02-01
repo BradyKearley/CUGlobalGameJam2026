@@ -8,7 +8,7 @@ extends Node3D
 @onready var bard = $Bard_Statue/Bard
 @onready var king = $King_Statue/King
 @onready var knight = $Knight_Statue/Knight
-
+@onready var light = $StatueLight
 var current_order = []
 var puzzle_solved = false
 
@@ -43,6 +43,7 @@ func solve_puzzle():
 	king.queue_free()
 	knight.queue_free()
 	puzzle_solved = true
+	light.show()
 	print("Puzzle solved! Key obtained.")
 	give_key()
 
