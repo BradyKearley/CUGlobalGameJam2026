@@ -5,6 +5,9 @@ extends Node3D
 var current_order = []
 var puzzle_solved = false
 
+@onready var correct = $Correct
+@onready var incorrect = $Incorrect
+
 func press_book(color: String):
 	if puzzle_solved:
 		return
@@ -14,8 +17,13 @@ func press_book(color: String):
 	# Check if the input so far is correct
 	for i in range(current_order.size()):
 		if current_order[i] != correct_order[i]:
+			incorrect.play()
 			reset_puzzle()
 			return
+		else:
+			correct.play()
+			return
+			
 
 	# If full sequence entered correctly
 	if current_order.size() == correct_order.size():

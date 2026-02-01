@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://k3s1tujt2v60"]
+
+[ext_resource type="AudioStream" uid="uid://2265d8feg8pl" path="res://SFX/walking.mp3" id="3_nhx87"]
+[ext_resource type="AudioStream" uid="uid://dt8uv2w35utuo" path="res://SFX/Music.mp3" id="5_l2k84"]
+
+[node name="AudioManager" type="Node" unique_id=1391718221]
+
+[node name="Walking" type="AudioStreamPlayer" parent="." unique_id=61824468]
+stream = ExtResource("3_nhx87")
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=1923536109]
+stream = ExtResource("5_l2k84")
+volume_db = -20.0
