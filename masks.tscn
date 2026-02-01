@@ -1767,13 +1767,13 @@ mesh = SubResource("ArrayMesh_8sjnc")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="br2/StaticBody3D" unique_id=2127002406 groups=["Bad"]]
 shape = SubResource("ConcavePolygonShape3D_rrcgi")
 
-[node name="br1" type="MeshInstance3D" parent="." unique_id=534719088 groups=["Win"]]
+[node name="br1" type="MeshInstance3D" parent="." unique_id=534719088 groups=["Bad"]]
 transform = Transform3D(0.72702193, 0, 0, 0, 0.47314662, 0, 0, 0, 0.18429628, 6.2027345, 3.0841992, 0.020576311)
 mesh = SubResource("ArrayMesh_illph")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="br1" unique_id=1015165887 groups=["Win"]]
+[node name="StaticBody3D" type="StaticBody3D" parent="br1" unique_id=1015165887 groups=["Bad"]]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="br1/StaticBody3D" unique_id=138032452 groups=["Win"]]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="br1/StaticBody3D" unique_id=138032452 groups=["Bad"]]
 shape = SubResource("ConcavePolygonShape3D_y0805")
 
 [node name="br3" type="MeshInstance3D" parent="." unique_id=302449984 groups=["Bad"]]
@@ -1794,13 +1794,13 @@ mesh = SubResource("ArrayMesh_dtkcu")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="bb2/StaticBody3D" unique_id=1331838424 groups=["Bad"]]
 shape = SubResource("ConcavePolygonShape3D_1v1la")
 
-[node name="bb1" type="MeshInstance3D" parent="." unique_id=767219481 groups=["Bad"]]
+[node name="bb1" type="MeshInstance3D" parent="." unique_id=767219481 groups=["Win"]]
 transform = Transform3D(0.72702193, 0, 0, 0, 0.47314662, 0, 0, 0, 0.18429628, 8.430316, 3.0841992, 0.020576311)
 mesh = SubResource("ArrayMesh_0yh80")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="bb1" unique_id=1847151605 groups=["Bad"]]
+[node name="StaticBody3D" type="StaticBody3D" parent="bb1" unique_id=1847151605 groups=["Win"]]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="bb1/StaticBody3D" unique_id=799754340 groups=["Bad"]]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="bb1/StaticBody3D" unique_id=799754340 groups=["Win"]]
 shape = SubResource("ConcavePolygonShape3D_7xa34")
 
 [node name="bb3" type="MeshInstance3D" parent="." unique_id=1751003902 groups=["Bad"]]

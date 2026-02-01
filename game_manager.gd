@@ -20,6 +20,7 @@ func _on_game_loop_timer_timeout() -> void:
 	var player = get_tree().get_first_node_in_group("Player")
 	if player and player.mask == "Win":
 		print("Player has winning mask - game won!")
+		get_tree().change_scene_to_file("res://win_screen.tscn")
 		return
 	
 	# Fade in ColorRect when game loop finishes
