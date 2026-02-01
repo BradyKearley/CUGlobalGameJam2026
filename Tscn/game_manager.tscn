@@ -22,6 +22,7 @@ color = Color(0, 0, 0, 1)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=737539965]
 stream = ExtResource("2_3keq3")
+volume_db = -20.0
 
 [connection signal="timeout" from="GameLoopTimer" to="." method="_on_game_loop_timer_timeout"]
 [connection signal="timeout" from="DeathTimer" to="." method="_on_death_timer_timeout"]
