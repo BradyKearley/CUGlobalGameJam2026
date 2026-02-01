@@ -14,6 +14,7 @@ var puzzle_solved = false
 @onready var red = $Book_Red
 @onready var purple = $Book_Purple
 @onready var yellow = $Book_Yellow
+@onready var clue = $Clue
 
 func press_book(color: String):
 	if puzzle_solved:
@@ -48,7 +49,7 @@ func solve_puzzle():
 	purple.queue_free()
 	yellow.queue_free()
 	puzzle_solved = true
-	print("Puzzle solved! Key obtained.")
+	clue.play()
 	give_key()
 
 func give_key():
