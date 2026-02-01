@@ -1,10 +1,21 @@
 [gd_scene format=3 uid="uid://cw31esap3kng7"]
 
 [ext_resource type="Script" uid="uid://bnfun0xbrcibd" path="res://Player.gd" id="1_yhba0"]
+[ext_resource type="FontFile" uid="uid://di2f32crtvulw" path="res://Font/Cameliya.ttf" id="3_1vxk4"]
 [ext_resource type="PackedScene" uid="uid://k3s1tujt2v60" path="res://audio_manager.tscn" id="3_rrw6e"]
+[ext_resource type="FontFile" uid="uid://dyn2h8swbrum5" path="res://Font/Tangerine-Regular.ttf" id="4_1vxk4"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mhy7c"]
 height = 2.1479492
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bpoka"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_pwtma"]
+font = ExtResource("4_1vxk4")
+font_size = 48
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
 
 [node name="Player" type="CharacterBody3D" unique_id=207691121]
 script = ExtResource("1_yhba0")
@@ -26,3 +37,28 @@ collide_with_areas = true
 current = true
 
 [node name="AudioManager" parent="." unique_id=1391718221 instance=ExtResource("3_rrw6e")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1999448226]
+
+[node name="Panel" type="Panel" parent="CanvasLayer" unique_id=613099236]
+offset_top = -599.0
+offset_right = 1153.0
+offset_bottom = 46.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_bpoka")
+
+[node name="Time" type="Label" parent="CanvasLayer/Panel" unique_id=1465960170]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -89.5
+offset_top = -50.0
+offset_right = 89.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_1vxk4")
+text = "11:00pm"
+label_settings = SubResource("LabelSettings_pwtma")
+horizontal_alignment = 1

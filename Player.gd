@@ -8,6 +8,12 @@ extends CharacterBody3D
 
 @onready var music = $AudioManager/Music
 @onready var walking_sound = $AudioManager/Walking
+@onready var time_ui = $CanvasLayer/Panel/Time
+
+@export var night_duration := 120.0 # seconds from 11:00 to 12:00
+
+var elapsed_time := 0.0
+var current_minutes := 0 # minutes after 11:00 (0 → 60)
 
 
 const noteUi: PackedScene = preload("res://Tscn/Ui/note_ui.tscn")
@@ -75,6 +81,19 @@ func _physics_process(delta):
 
 	move_and_slide()
 func _process(delta: float) -> void:
+	# --- NIGHT TIMER ---
+	elapsed_time += delta
+	elapsed_time = min(elapsed_time, night_duration)
+
+	# Convert elapsed seconds into in-game minutes
+	# 120 seconds → 60 minutes
+	var total_minutes = int((elapsed_time / night_duration) * 60)
+
+	# Snap to 5-minute increments
+	current_minutes = (total_minutes / 5) * 5
+	
+	time_ui.text = get_clock_time()
+	
 	# Cast a ray from the center of the camera view
 	var space_state = get_world_3d().direct_space_state
 	var camera_transform = camera.global_transform
@@ -234,3 +253,14 @@ func resetMouseFromBartender():
 func setDrink(drink_name: String):
 	heldDrink = drink_name
 	print("Player selected drink: ", heldDrink)
+
+func get_clock_time() -> String:
+	var hour := 11
+	var minute := current_minutes
+
+	if minute >= 60:
+		hour = 12
+		minute -= 60
+
+	var minute_str := str(minute).pad_zeros(2)
+	return str(hour) + ":" + minute_str + " pm"
