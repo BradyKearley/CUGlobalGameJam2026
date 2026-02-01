@@ -30,7 +30,7 @@
 [ext_resource type="PackedScene" uid="uid://1jc65xse0kvp" path="res://npc_woman.tscn" id="29_8slmw"]
 [ext_resource type="PackedScene" uid="uid://53j1e001axy" path="res://manor.tscn" id="30_onx7j"]
 [ext_resource type="PackedScene" uid="uid://dto5pxuueuiu" path="res://masks.tscn" id="30_u7wvl"]
-[ext_resource type="PackedScene" uid="uid://n6on0my6s0hg" path="res://statues.tscn" id="31_onx7j"]
+[ext_resource type="PackedScene" path="res://statues.tscn" id="31_onx7j"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_px6mo"]
 resource_name = "Material"
@@ -1317,7 +1317,7 @@ transform = Transform3D(-0.09941849, 6.70022e-09, 0.0027998649, -8.742273e-09, -
 mesh = SubResource("ArrayMesh_pk5u2")
 
 [node name="Bartender" parent="." unique_id=199963845 instance=ExtResource("24_pk5u2")]
-transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 5.401982, -0.002985239, -47.246124)
+transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 9.192881, -0.002985239, -46.500237)
 voice = ExtResource("25_lfj8l")
 voiceTwo = ExtResource("25_lght5")
 

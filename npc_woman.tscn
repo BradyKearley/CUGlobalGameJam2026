@@ -3,6 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://dr46esr2fse6m" path="res://Models/NPCs/Woman.glb" id="1_amy13"]
 [ext_resource type="Script" uid="uid://dndvf8em3yvkn" path="res://npc_woman.gd" id="2_7tvhj"]
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7tvhj"]
+radius = 0.5541992
+height = 3.9622803
+
 [node name="Woman2" unique_id=468122675 instance=ExtResource("1_amy13")]
 script = ExtResource("2_7tvhj")
 
@@ -18,3 +22,9 @@ bones/7/position = Vector3(5.4525387e-08, 0.5328104, 1.3674851e-07)
 bones/7/rotation = Quaternion(6.409965e-08, 6.6049516e-08, -0.0046576625, 0.99998915)
 bones/8/rotation = Quaternion(-3.7009395e-05, -0.008060221, 0.99995667, -0.0046574813)
 bones/9/rotation = Quaternion(0.023906367, -0.0001112484, -0.0046563204, 0.99970335)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2" unique_id=488597008]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=301333521]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9668579, 0.07002449)
+shape = SubResource("CapsuleShape3D_7tvhj")
