@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://miwya1yvx3iu"]
 
+[ext_resource type="Script" uid="uid://hu0cunobtmk7" path="res://win_screen.gd" id="1_l2arl"]
+
 [node name="WinScreen" type="Control" unique_id=776374395]
 layout_mode = 3
 anchors_preset = 15
@@ -7,6 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_l2arl")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1467358212]
 layout_mode = 1
@@ -35,3 +38,9 @@ theme_override_font_sizes/font_size = 169
 text = "YOU WIN!"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="." unique_id=522656250]
+wait_time = 3.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
