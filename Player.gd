@@ -6,6 +6,10 @@ extends CharacterBody3D
 @onready var camera = $Camera3D
 @onready var raycast = $Camera3D/RayCast3D
 
+@onready var music = $AudioManager/Music
+@onready var walking_sound = $AudioManager/Walking
+
+
 const noteUi: PackedScene = preload("res://Tscn/Ui/note_ui.tscn")
 const combinationLockUi: PackedScene = preload("res://combination_lock.tscn")
 const interactUi: PackedScene = preload("res://Tscn/Ui/interact_popup.tscn")
@@ -17,7 +21,9 @@ var interactPopupPresent = false
 var currentInteractPopup = null
 var heldDrink = "None"
 var currentLock = null
+
 func _ready():
+	music.play()
 	# Capture the mouse cursor
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
@@ -33,6 +39,13 @@ func _input(event):
 			camera.rotation.x = clampf(camera.rotation.x, deg_to_rad(-90), deg_to_rad(90))
 
 func _physics_process(delta):
+	#Handle Walking SFX
+	if velocity.length() == 0:
+		if !walking_sound.playing:
+			walking_sound.play()
+		else:
+			walking_sound.stop()
+		
 	# Handle WASD movement
 	var input_dir = Vector3.ZERO
 	if not noteUiPresent and not lockUiPresent and not bartenderUiPresent:

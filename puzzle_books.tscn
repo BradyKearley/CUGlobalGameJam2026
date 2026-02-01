@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://ia31hssg3j8m" path="res://book_puzzle.gd" id="1_2pa1c"]
 [ext_resource type="Texture2D" uid="uid://mubbt7xqerm3" path="res://Models/PuzzleBooks/Puzzle_Books_57_reinassance plaster texture seamless.jpg" id="2_7iysl"]
 [ext_resource type="Script" uid="uid://ctj5vvv5l8ade" path="res://book.gd" id="3_tivom"]
+[ext_resource type="AudioStream" uid="uid://cssjhdq4rb84c" path="res://SFX/correct.wav" id="4_tivom"]
+[ext_resource type="AudioStream" uid="uid://bxmnuhdslu3hr" path="res://SFX/wrong.wav" id="5_1g0ex"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vb7sh"]
 resource_name = "Den_Walls"
@@ -214,3 +216,9 @@ puzzle_manager = NodePath("..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Book_Yellow" unique_id=1656988119 groups=["Puzzle_Book"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.26349086, 0.37443745, -2.0304332)
 shape = SubResource("ConcavePolygonShape3D_1g0ex")
+
+[node name="Correct" type="AudioStreamPlayer" parent="." unique_id=828002260]
+stream = ExtResource("4_tivom")
+
+[node name="Incorrect" type="AudioStreamPlayer" parent="." unique_id=1661305318]
+stream = ExtResource("5_1g0ex")
