@@ -191,44 +191,44 @@ shadow_mesh = SubResource("ArrayMesh_i4635")
 [node name="Statues" type="Node3D" unique_id=920813482]
 script = ExtResource("1_jujl0")
 
-[node name="Bard_State" type="MeshInstance3D" parent="." unique_id=1511878663]
+[node name="Bard_State" type="MeshInstance3D" parent="." unique_id=1511878663 groups=["statue"]]
 transform = Transform3D(0.48009554, 0, -2.6403618e-06, 0, 0.48009554, 0, 2.6403618e-06, 0, 0.48009554, 2.1104465, 1.6855807, 0.70945543)
 mesh = SubResource("ArrayMesh_3tm8y")
 
-[node name="Bard" type="StaticBody3D" parent="Bard_State" unique_id=874952149 node_paths=PackedStringArray("puzzle_manager") groups=["Puzzle_Book"]]
+[node name="Bard" type="StaticBody3D" parent="Bard_State" unique_id=874952149 node_paths=PackedStringArray("puzzle_manager") groups=["statue"]]
 transform = Transform3D(3.9999998, 0, -5.456968e-12, 0, 3.9999998, 0, 5.456968e-12, 0, 3.9999998, -3.8978775, -0.7272384, -0.40812826)
 script = ExtResource("2_54fvj")
 statue = "bard"
 puzzle_manager = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Bard_State/Bard" unique_id=499729045 groups=["Puzzle_Book"]]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Bard_State/Bard" unique_id=499729045 groups=["statue"]]
 transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, -0.17536558, -0.53910446, 0)
 shape = SubResource("ConcavePolygonShape3D_ohepx")
 
-[node name="King_Statue" type="MeshInstance3D" parent="." unique_id=530940141]
+[node name="King_Statue" type="MeshInstance3D" parent="." unique_id=530940141 groups=["statue"]]
 transform = Transform3D(0.48009554, 0, -2.6403618e-06, 0, 0.48009554, 0, 2.6403618e-06, 0, 0.48009554, 4.5996246, 1.6855811, 0.7094588)
 mesh = SubResource("ArrayMesh_q8tgx")
 
-[node name="King" type="StaticBody3D" parent="King_Statue" unique_id=1759365466 node_paths=PackedStringArray("puzzle_manager") groups=["Puzzle_Book"]]
+[node name="King" type="StaticBody3D" parent="King_Statue" unique_id=1759365466 node_paths=PackedStringArray("puzzle_manager") groups=["statue"]]
 transform = Transform3D(4, 0, -2.9103833e-12, 0, 4, 0, 2.9103833e-12, 0, 4, 0.0030469894, -0.6636584, -0.56501484)
 script = ExtResource("2_54fvj")
 statue = "king"
 puzzle_manager = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="King_Statue/King" unique_id=1598325327 groups=["Puzzle_Book"]]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="King_Statue/King" unique_id=1598325327 groups=["statue"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.59987783, 0)
 shape = SubResource("ConcavePolygonShape3D_ohepx")
 
-[node name="Knight_Statue" type="MeshInstance3D" parent="." unique_id=1187862066]
+[node name="Knight_Statue" type="MeshInstance3D" parent="." unique_id=1187862066 groups=["statue"]]
 transform = Transform3D(0.48009554, 0, -2.6403618e-06, 0, 0.48009554, 0, 2.6403618e-06, 0, 0.48009554, -0.18486047, 1.6855805, 0.70945555)
 mesh = SubResource("ArrayMesh_11wfe")
 
-[node name="Knight" type="StaticBody3D" parent="Knight_Statue" unique_id=1587207462 node_paths=PackedStringArray("puzzle_manager") groups=["Puzzle_Book"]]
+[node name="Knight" type="StaticBody3D" parent="Knight_Statue" unique_id=1587207462 node_paths=PackedStringArray("puzzle_manager") groups=["statue"]]
 transform = Transform3D(4, 0, -8.731152e-12, 0, 4, 0, 8.731152e-12, 0, 4, 4.946246, -0.7541008, -0.5259348)
 script = ExtResource("2_54fvj")
 statue = "knight"
 puzzle_manager = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Knight_Statue/Knight" unique_id=473167048 groups=["Puzzle_Book"]]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Knight_Statue/Knight" unique_id=473167048 groups=["statue"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.60725087, 0)
 shape = SubResource("ConcavePolygonShape3D_ohepx")

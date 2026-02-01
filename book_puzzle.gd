@@ -7,6 +7,12 @@ var puzzle_solved = false
 
 @onready var correct = $Correct
 @onready var incorrect = $Incorrect
+@onready var solved = $Solved
+@onready var green = $Book_Green
+@onready var blue = $Book_Blue
+@onready var red = $Book_Red
+@onready var purple = $Book_Purple
+@onready var yellow = $Book_Yellow
 
 func press_book(color: String):
 	if puzzle_solved:
@@ -22,7 +28,6 @@ func press_book(color: String):
 			return
 		else:
 			correct.play()
-			return
 			
 
 	# If full sequence entered correctly
@@ -34,6 +39,12 @@ func reset_puzzle():
 	print("Wrong order! Resetting.")
 
 func solve_puzzle():
+	solved.play()
+	green.hide()
+	blue.hide()
+	red.hide()
+	purple.hide()
+	yellow.hide()
 	puzzle_solved = true
 	print("Puzzle solved! Key obtained.")
 	give_key()

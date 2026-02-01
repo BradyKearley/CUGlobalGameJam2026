@@ -40,11 +40,11 @@ func _input(event):
 
 func _physics_process(delta):
 	#Handle Walking SFX
-	if velocity.length() == 0:
+	if velocity.length() != 0:
 		if !walking_sound.playing:
 			walking_sound.play()
-		else:
-			walking_sound.stop()
+	else:
+		walking_sound.stop()
 		
 	# Handle WASD movement
 	var input_dir = Vector3.ZERO

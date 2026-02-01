@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://bkpqj0u2ck7w7"]
 
-[ext_resource type="PackedScene" path="res://puzzle_books.tscn" id="1_l5ukw"]
+[ext_resource type="PackedScene" uid="uid://c4s5wp2cmje0v" path="res://puzzle_books.tscn" id="1_l5ukw"]
 [ext_resource type="PackedScene" uid="uid://w5gpp1crt1ya" path="res://manor_2_0.tscn" id="1_yx7mw"]
 [ext_resource type="Texture2D" uid="uid://166vs6nd8e41" path="res://Models/Puzzle_Paintings/Puzzle_Paintings_Painting1.png" id="2_4srsv"]
 [ext_resource type="PackedScene" uid="uid://cw31esap3kng7" path="res://Tscn/Player/player.tscn" id="2_ykeeq"]

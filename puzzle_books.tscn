@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://ctj5vvv5l8ade" path="res://book.gd" id="3_tivom"]
 [ext_resource type="AudioStream" uid="uid://cssjhdq4rb84c" path="res://SFX/correct.wav" id="4_tivom"]
 [ext_resource type="AudioStream" uid="uid://bxmnuhdslu3hr" path="res://SFX/wrong.wav" id="5_1g0ex"]
+[ext_resource type="AudioStream" uid="uid://bd87haf1xafwu" path="res://SFX/Violin.wav" id="5_up802"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vb7sh"]
 resource_name = "Den_Walls"
@@ -220,5 +221,9 @@ shape = SubResource("ConcavePolygonShape3D_1g0ex")
 [node name="Correct" type="AudioStreamPlayer" parent="." unique_id=828002260]
 stream = ExtResource("4_tivom")
 
+[node name="Solved" type="AudioStreamPlayer" parent="." unique_id=1829606331]
+stream = ExtResource("5_up802")
+
 [node name="Incorrect" type="AudioStreamPlayer" parent="." unique_id=1661305318]
 stream = ExtResource("5_1g0ex")
+volume_db = -10.0

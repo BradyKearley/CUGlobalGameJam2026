@@ -5,5 +5,4 @@ extends StaticBody3D
 
 
 func interact():
-	
 	puzzle_manager.press_book(book_color)
