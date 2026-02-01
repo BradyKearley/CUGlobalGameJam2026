@@ -86,19 +86,7 @@ func _process(delta: float) -> void:
 	
 	if result:
 		var collider = result.collider
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-		if collider.is_in_group("Note") or collider.is_in_group("Voice") or collider.is_in_group("CodeLock") or collider.is_in_group("Bartender") or collider.is_in_group("Puzzle_Book") or collider.is_in_group("Bad") or collider.is_in_group("Win"):
-=======
 		if collider.is_in_group("Note") or collider.is_in_group("Voice") or collider.is_in_group("CodeLock") or collider.is_in_group("Bartender") or collider.is_in_group("Puzzle_Book") or collider.is_in_group("statue"):
->>>>>>> Stashed changes
-=======
-		if collider.is_in_group("Note") or collider.is_in_group("Voice") or collider.is_in_group("CodeLock") or collider.is_in_group("Bartender") or collider.is_in_group("Puzzle_Book") or collider.is_in_group("statue"):
->>>>>>> Stashed changes
-=======
-		if collider.is_in_group("Note") or collider.is_in_group("Voice") or collider.is_in_group("CodeLock") or collider.is_in_group("Bartender") or collider.is_in_group("Puzzle_Book") or collider.is_in_group("statue"):
->>>>>>> Stashed changes
 			lookingAtInteractable = true
 			
 			# Show interact popup if not already shown and no other UI is open

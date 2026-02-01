@@ -28,9 +28,9 @@
 [ext_resource type="PackedScene" uid="uid://br6qebqohpdft" path="res://TestPerson.tscn" id="27_ac0cv"]
 [ext_resource type="PackedScene" uid="uid://bsolx4n0u2e6j" path="res://npc_man.tscn" id="28_6krrg"]
 [ext_resource type="PackedScene" uid="uid://1jc65xse0kvp" path="res://npc_woman.tscn" id="29_8slmw"]
-[ext_resource type="PackedScene" uid="uid://bqaxu62bg2b00" path="res://manor.tscn" id="30_onx7j"]
+[ext_resource type="PackedScene" uid="uid://53j1e001axy" path="res://manor.tscn" id="30_onx7j"]
 [ext_resource type="PackedScene" uid="uid://dto5pxuueuiu" path="res://masks.tscn" id="30_u7wvl"]
-[ext_resource type="PackedScene" uid="uid://n6on0my6s0hg" path="res://statues.tscn" id="31_onx7j"]
+[ext_resource type="PackedScene" path="res://statues.tscn" id="31_onx7j"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_px6mo"]
 resource_name = "Material"
@@ -1037,20 +1037,7 @@ mesh = SubResource("ArrayMesh_euc45")
 transform = Transform3D(-6.556708e-08, -1.5, 0, 1.5, -6.556708e-08, 0, 0, 0, 0.14, 29.544483, 3.89039, -33.334236)
 mesh = SubResource("ArrayMesh_wt57k")
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-[node name="Manor2_0" parent="." unique_id=1119379920 instance=ExtResource("1_yx7mw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0030534267, 0.058179855, 0.011896133)
-
 [node name="Player" parent="." unique_id=207691121 groups=["Player"] instance=ExtResource("2_ykeeq")]
-=======
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-[node name="Player" parent="." unique_id=207691121 instance=ExtResource("2_ykeeq")]
->>>>>>> Stashed changes
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.7895775, 1.1707963, -4.5691004)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1680402485]

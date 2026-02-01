@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://b5sjpruok4yyr"]
+
+[sub_resource type="GDScript" id="GDScript_intro"]
+script/source = "extends Control
+
+@onready var label = $Label
+
+func _ready():
+	# Start the text below the screen
+	label.position.y = get_viewport_rect().size.y
+	
+	# Create tween for scrolling animation
+	var tween = create_tween()
+	tween.tween_property(label, \"position:y\", -label.size.y -200, 42.0)
+	tween.tween_callback(_on_animation_complete)
+
+func _on_animation_complete():
+	# Change to main game scene after animation
+	get_tree().change_scene_to_file(\"res://main_game.tscn\")
+
+func _input(event):
+	# Skip intro on any key press or mouse click
+	if event is InputEventKey and event.pressed:
+		get_tree().change_scene_to_file(\"res://main_game.tscn\")
+	elif event is InputEventMouseButton and event.pressed:
+		get_tree().change_scene_to_file(\"res://main_game.tscn\")
+"
+
+[node name="IntroScreen" type="Control" unique_id=1308863586]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_intro")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=590889759]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="." unique_id=1558691615]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -300.0
+offset_right = 400.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.843137, 0, 1)
+theme_override_font_sizes/font_size = 28
+text = "A LONG TIME AGO,
+IN A MANOR FAR, FAR AWAY…
+
+A GRAND MASQUERADE
+HAS TURNED DEADLY.
+
+A MURDERER WALKS FREELY,
+HIDDEN BEHIND A MASK.
+
+EACH NIGHT,
+THE CLOCK STRIKES MIDNIGHT
+AND YOU DIE.
+
+BUT DEATH IS NOT THE END.
+
+ONE HOUR BEFORE YOUR MURDER,
+TIME REWINDS.
+THE MUSIC PLAYS AGAIN.
+THE GUESTS RETURN.
+THE MASKS REMAIN.
+
+YOUR ONLY ESCAPE
+IS TO FIND THE CORRECT MASK TO BEAR YOURSELF
+BEFORE MIDNIGHT STRIKES ONCE MORE.
+
+CHOOSE WISELY.
+
+TIME IS SHORT.
+THE LOOP IS ENDLESS.
+AND YOUR LIFE
+DEPENDS ON IT."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
