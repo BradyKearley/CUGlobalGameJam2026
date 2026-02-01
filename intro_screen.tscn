@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://b5sjpruok4yyr"]
 
+[ext_resource type="AudioStream" uid="uid://8wn7235lweyj" path="res://SFX/Intro.mp3" id="1_4pqbn"]
+
 [sub_resource type="GDScript" id="GDScript_intro"]
 script/source = "extends Control
 
@@ -93,3 +95,7 @@ DEPENDS ON IT."
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1214438097]
+stream = ExtResource("1_4pqbn")
+autoplay = true

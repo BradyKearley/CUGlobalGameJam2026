@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="MurderMystery"
-run/main_scene="uid://d0s2o2tx86s6l"
+run/main_scene="uid://b5sjpruok4yyr"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
