@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://cssjhdq4rb84c" path="res://SFX/correct.wav" id="4_tivom"]
 [ext_resource type="AudioStream" uid="uid://bxmnuhdslu3hr" path="res://SFX/wrong.wav" id="5_1g0ex"]
 [ext_resource type="AudioStream" uid="uid://bd87haf1xafwu" path="res://SFX/Violin.wav" id="5_up802"]
+[ext_resource type="AudioStream" uid="uid://oen1atmc7dd1" path="res://SFX/BlackMask.mp3" id="7_up802"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vb7sh"]
 resource_name = "Den_Walls"
@@ -226,6 +227,10 @@ stream = ExtResource("5_up802")
 
 [node name="Incorrect" type="AudioStreamPlayer" parent="." unique_id=1661305318]
 stream = ExtResource("5_1g0ex")
+volume_db = -10.0
+
+[node name="Clue" type="AudioStreamPlayer" parent="." unique_id=2129838530]
+stream = ExtResource("7_up802")
 volume_db = -10.0
 
 [node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=63054747]

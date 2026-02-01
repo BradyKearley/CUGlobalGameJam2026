@@ -32,3 +32,5 @@ func _on_close_button_pressed():
 func close_ui():
 	ui_closed.emit()
 	queue_free()
+
+	
