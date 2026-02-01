@@ -1,4 +1,7 @@
+
 extends MeshInstance3D
+
+class_name Bartender
 
 @export var voice:AudioStreamMP3
 @export var voiceTwo:AudioStreamMP3
@@ -14,3 +17,10 @@ func playVoice():
 	$Voice.play()
 func swapVoice():
 	$Voice.stream = voiceTwo
+	
+func hideWine():
+	wine.hide()
+func hideChampagne():
+	champagne.hide()
+func hideMartini():
+	martini.hide()

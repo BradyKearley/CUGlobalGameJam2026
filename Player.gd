@@ -5,6 +5,8 @@ extends CharacterBody3D
 @onready var camera = $Camera3D
 @onready var raycast = $Camera3D/RayCast3D
 
+@export var bartender:Bartender
+
 @onready var music = $AudioManager/Music
 @onready var walking_sound = $AudioManager/Walking
 @onready var time_ui = $CanvasLayer/Panel/Time
@@ -251,6 +253,12 @@ func resetMouseFromBartender():
 
 func setDrink(drink_name: String):
 	heldDrink = drink_name
+	if heldDrink == "Wine":
+		bartender.hideWine()
+	elif heldDrink == "Champagne":
+		bartender.hideChampagne()
+	elif heldDrink == "Martini":
+		bartender.hideMartini()
 	print("Player selected drink: ", heldDrink)
 
 func get_clock_time() -> String:
