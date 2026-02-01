@@ -39,7 +39,6 @@ current = true
 [node name="AudioManager" parent="." unique_id=1391718221 instance=ExtResource("3_rrw6e")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1999448226]
-visible = false
 
 [node name="Panel" type="Panel" parent="CanvasLayer" unique_id=613099236]
 offset_top = -599.0
