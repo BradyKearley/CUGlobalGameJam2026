@@ -1039,11 +1039,14 @@ mesh = SubResource("ArrayMesh_wt57k")
 
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [node name="Manor2_0" parent="." unique_id=1119379920 instance=ExtResource("1_yx7mw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0030534267, 0.058179855, 0.011896133)
 
 [node name="Player" parent="." unique_id=207691121 groups=["Player"] instance=ExtResource("2_ykeeq")]
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 [node name="Player" parent="." unique_id=207691121 instance=ExtResource("2_ykeeq")]
