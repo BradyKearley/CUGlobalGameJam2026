@@ -227,3 +227,9 @@ stream = ExtResource("5_up802")
 [node name="Incorrect" type="AudioStreamPlayer" parent="." unique_id=1661305318]
 stream = ExtResource("5_1g0ex")
 volume_db = -10.0
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=63054747]
+transform = Transform3D(-0.9999987, 0, 0.0016230656, 0, 1, 0, -0.0016230656, 0, -0.9999987, -0.05201873, 0.40025616, -5.1232824)
+light_color = Color(1, 1, 0.4117647, 1)
+light_energy = 4.288
+spot_range = 5.323
