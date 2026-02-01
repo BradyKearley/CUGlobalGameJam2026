@@ -1,0 +1,6 @@
+[gd_resource type="StyleBoxFlat" format=3 uid="uid://dlikwil5cmtuc"]
+
+[resource]
+bg_color = Color(0.20194009, 0.039588653, 0.027349006, 1)
+border_color = Color(0, 0, 0, 1)
+shadow_size = 10
