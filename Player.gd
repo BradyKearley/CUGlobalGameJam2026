@@ -2,7 +2,6 @@ extends CharacterBody3D
 
 @export var speed = 9.0
 @export var mouse_sensitivity = 0.002
-
 @onready var camera = $Camera3D
 @onready var raycast = $Camera3D/RayCast3D
 
