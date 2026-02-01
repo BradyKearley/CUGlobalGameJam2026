@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bmo3giy3e54hu"]
 
 [ext_resource type="FontFile" uid="uid://dyn2h8swbrum5" path="res://Font/Tangerine-Regular.ttf" id="1_5cpk5"]
-[ext_resource type="Script" uid="uid://btwmj0q4x4xh" path="res://Tscn/Player/note_ui.gd" id="1_p3lif"]
+[ext_resource type="Script" uid="uid://18ufw6eic042" path="res://Tscn/book_ui.gd" id="1_p3lif"]
 [ext_resource type="FontFile" uid="uid://di2f32crtvulw" path="res://Font/Cameliya.ttf" id="2_p3lif"]
 [ext_resource type="Texture2D" uid="uid://bpv2iwyxblwse" path="res://Materials/Scrolled_Ancient_Paper_PNG_Clipart_Image.png" id="3_5hkex"]
 

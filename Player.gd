@@ -11,10 +11,12 @@ extends CharacterBody3D
 
 
 const noteUi: PackedScene = preload("res://Tscn/Ui/note_ui.tscn")
+const bookUi: PackedScene = preload("res://book_ui.tscn")
 const combinationLockUi: PackedScene = preload("res://combination_lock.tscn")
 const interactUi: PackedScene = preload("res://Tscn/Ui/interact_popup.tscn")
 const bartenderUi: PackedScene = preload("res://Tscn/Ui/bartender_ui.tscn")
 var noteUiPresent = false
+var bookUiPresent = false
 var lockUiPresent = false
 var bartenderUiPresent = false
 var interactPopupPresent = false
@@ -50,7 +52,7 @@ func _physics_process(delta):
 		
 	# Handle WASD movement
 	var input_dir = Vector3.ZERO
-	if not noteUiPresent and not lockUiPresent and not bartenderUiPresent:
+	if not noteUiPresent and not bookUiPresent and not lockUiPresent and not bartenderUiPresent:
 		if Input.is_action_pressed("D"): # D key
 			input_dir.x += 1
 		if Input.is_action_pressed("A"): # A key
@@ -86,11 +88,11 @@ func _process(delta: float) -> void:
 	
 	if result:
 		var collider = result.collider
-		if collider.is_in_group("Note") or collider.is_in_group("Voice") or collider.is_in_group("CodeLock") or collider.is_in_group("Bad") or collider.is_in_group("Win") or collider.is_in_group("Bartender") or collider.is_in_group("Puzzle_Book") or collider.is_in_group("statue"):
+		if collider.is_in_group("Note") or collider.is_in_group("Voice") or collider.is_in_group("CodeLock") or collider.is_in_group("Bad") or collider.is_in_group("Win") or collider.is_in_group("Bartender") or collider.is_in_group("Puzzle_Book") or collider.is_in_group("statue") or collider.is_in_group("book"):
 			lookingAtInteractable = true
 			
 			# Show interact popup if not already shown and no other UI is open
-			if not interactPopupPresent and not noteUiPresent and not lockUiPresent and not bartenderUiPresent:
+			if not interactPopupPresent and not noteUiPresent and not bookUiPresent and not lockUiPresent and not bartenderUiPresent:
 				showInteractPopup()
 			
 			# Handle interactions
@@ -104,6 +106,16 @@ func _process(delta: float) -> void:
 					# Connect the signal to reset mouse when note is closed
 					note_ui_instance.note_closed.connect(resetMouse)
 					noteUiPresent = true
+					Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+				elif collider.is_in_group("book") and not bookUiPresent:
+					hideInteractPopup()
+					var noteText = collider.get_parent().text
+					var book_ui_instance = bookUi.instantiate()
+					book_ui_instance.text = noteText
+					add_child(book_ui_instance)
+					# Connect the signal to reset mouse when note is closed
+					book_ui_instance.note_closed.connect(resetMouse)
+					bookUiPresent = true
 					Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 				elif collider.is_in_group("Voice"):
 					if heldDrink == "Wine" and collider.get_parent().drinkName == "Wine":
@@ -195,6 +207,7 @@ func hideInteractPopup():
 		interactPopupPresent = false
 func resetMouse():
 	noteUiPresent = false
+	bookUiPresent = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func resetMouseFromLock():
