@@ -86,7 +86,7 @@ func _process(delta: float) -> void:
 	
 	if result:
 		var collider = result.collider
-		if collider.is_in_group("Note") or collider.is_in_group("Voice") or collider.is_in_group("CodeLock") or collider.is_in_group("Bartender") or collider.is_in_group("Puzzle_Book") or collider.is_in_group("statue"):
+		if collider.is_in_group("Note") or collider.is_in_group("Voice") or collider.is_in_group("CodeLock") or collider.is_in_group("Bad") or collider.is_in_group("Win") or collider.is_in_group("Bartender") or collider.is_in_group("Puzzle_Book") or collider.is_in_group("statue"):
 			lookingAtInteractable = true
 			
 			# Show interact popup if not already shown and no other UI is open
@@ -115,6 +115,24 @@ func _process(delta: float) -> void:
 					else:
 						print("Drink")
 						collider.get_parent().playDrink()
+				elif collider.is_in_group("Bad"):
+					hideInteractPopup()
+					# Show previously hidden mask if there is one
+					if currentHiddenMask:
+						currentHiddenMask.show()
+					# Hide the new mask and track it
+					currentHiddenMask = collider.get_parent()
+					currentHiddenMask.hide()
+					mask = "Bad"
+				elif collider.is_in_group("Win"):
+					hideInteractPopup()
+					# Show previously hidden mask if there is one
+					if currentHiddenMask:
+						currentHiddenMask.show()
+					# Hide the new mask and track it
+					currentHiddenMask = collider.get_parent()
+					currentHiddenMask.hide()
+					mask = "Win"
 				elif collider.is_in_group("CodeLock") and not lockUiPresent:
 					hideInteractPopup()
 					currentLock = collider.get_parent()
